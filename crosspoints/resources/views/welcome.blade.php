@@ -85,8 +85,8 @@
             <div class="">
                 <div class="title m-b-md">
                     Crosspoints B<i class="fa fa-heart" style="color:red;"></i>
-                    <p>Wow luuk branch test</p>
                 </div>
+                <p>Wow luuk branch test</p>
 
                 <div class="links">
                     <a href="https://laravel.com/docs">Docs</a>
