@@ -11,7 +11,13 @@
                     <h2 class="text-center">Voelde u zich onveilig?</h2>
                     <div class="container">
                         <div class="row">
-                            <div class="col-sm"><button>yes</button></div>
+
+                            <form action="/yesscore" method="POST">
+                                @csrf
+                                @method("put")
+                                <div class="col-sm"><button>yes</button></div>
+                            </form>
+
                             <div class="col-sm"></div>
                             <div class="col-sm-4.4"><button>no</button></div>
                         </div>

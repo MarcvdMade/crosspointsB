@@ -21,3 +21,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/meldentest','FormController@index')->name('meldentest');
+Route::put('/addscore','FormController@addscore');
