@@ -85,6 +85,7 @@
             <div class="">
                 <div class="title m-b-md">
                     Crosspoints B<i class="fa fa-heart" style="color:red;"></i>
+                    veel liefs van thomas
                 </div>
 
                 <div class="links">
