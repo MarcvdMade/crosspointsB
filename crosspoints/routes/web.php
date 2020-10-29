@@ -19,4 +19,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
+//information routes
+Route::post('information', 'InformationController@store');
+Route::put('information/{id}', 'InformationController@update');
+Route::get('information', 'InformationController@index')->name('information');
+Route::get('information/{id}', 'InformationController@show')->name('info-show');
+Route::get('information.create', 'InformationController@create')->name('info-create');
+Route::get('information/{id}/edit', 'InformationController@edit')->name('info-edit');
+
 Route::get('/home', 'HomeController@index')->name('home');
