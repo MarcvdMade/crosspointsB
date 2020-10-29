@@ -18,7 +18,7 @@ class InformationController extends Controller
     public function index()
     {
         //render resources
-        $problems = Problem::all();
+        $problems = Problem::latest()->get();
 
         return view('information.info', [
             'problems' => $problems
@@ -52,6 +52,7 @@ class InformationController extends Controller
 //        dd(request()->all());
         request()->validate([
             'problem' => 'required',
+            'summary' => 'required',
             'description' => 'required',
             'tips' => 'exists:tips,id',
             'links' => 'exists:links,id'
@@ -60,6 +61,7 @@ class InformationController extends Controller
         $problem = new Problem();
 
         $problem->name = request('problem');
+        $problem->summary = request('summary');
         $problem->description = request('description');
 
         $problem->save();
@@ -67,14 +69,13 @@ class InformationController extends Controller
         $problem->links()->attach(request('links'));
 
         return redirect('information')
-            ->with('success', 'You added a new problem!');
+            ->with('success', 'You successfully added a new problem!');
     }
 
-    public function edit(Problem $problem)
+    public function edit($id)
     {
         //renders a list of a resource
-//        $problem = Problem::find($problem);
-        dd($problem);
+        $problem = Problem::find($id);
         $links = Link::all();
         $tips = Tip::all();
 
@@ -86,20 +87,25 @@ class InformationController extends Controller
         ]);
     }
 
-    public function update(Problem $problem)
+    public function update($id)
     {
+
+        $problem = Problem::find($id);
+
         $problem->tips()->detach();
         $problem->links()->detach();
-//        dd(\request()->all());
+
         //persist the edited resource
         request()->validate([
             'problem' => 'required',
+            'summary' => 'required',
             'description' => 'required',
             'tips' => 'exists:tips,id',
             'links' => 'exists:links,id'
         ]);
 
         $problem->name = request('problem');
+        $problem->summary = request('summary');
         $problem->description = request('description');
 
         $problem->save();
@@ -107,7 +113,16 @@ class InformationController extends Controller
         $problem->links()->attach(request('links'));
 
         return redirect('information')
-            ->with('success', 'You have successfully edited your post!');
+            ->with('success', 'You successfully edited your post!');
+    }
+
+    public function destroy($id)
+    {
+        $problem = Problem::find($id);
+
+        $problem->delete();
+
+        return redirect('information')->with('success', 'You successfully deleted your post!');
     }
 
 }

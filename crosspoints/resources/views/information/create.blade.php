@@ -13,8 +13,15 @@
                 @enderror
             </div>
             <div>
-                <label for="description">Beschrijving</label>
-                <input name="description" id="description" type="text" value="{{old('description')}}" required>
+                <label for="summary">Kleine beschrijving</label>
+                <textarea name="summary" id="summary" type="text" required>{{old('summary')}}</textarea>
+                @error('summary')
+                    <p>{{$errors->first('summary')}}</p>
+                @enderror
+            </div>
+            <div>
+                <label for="description">Volledige beschrijving</label>
+                <textarea name="description" id="description" type="text" required>{{old('description')}}</textarea>
                 @error('description')
                 <p>{{$errors->first('description')}}</p>
                 @enderror
@@ -31,7 +38,7 @@
                 <label for="links">Links</label>
                 <select name="links[]" multiple id="links">
                     @foreach($links as $link)
-                        <option value="{{$link->id}}">{{$link->link}}</option>
+                        <option value="{{$link->id}}">{{$link->label}}</option>
                     @endforeach
                 </select>
             </div>
@@ -39,6 +46,9 @@
                 <input type="submit" value="Voeg toe">
             </div>
         </form>
+        <div>
+            <a href="{{route('information')}}">Annuleren</a>
+        </div>
     </div>
 
 @endsection
