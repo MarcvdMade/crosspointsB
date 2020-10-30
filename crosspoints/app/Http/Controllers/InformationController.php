@@ -49,7 +49,6 @@ class InformationController extends Controller
 
     public function store()
     {
-//        dd(request()->all());
         request()->validate([
             'problem' => 'required',
             'summary' => 'required',
@@ -69,7 +68,7 @@ class InformationController extends Controller
         $problem->links()->attach(request('links'));
 
         return redirect('information')
-            ->with('success', 'You successfully added a new problem!');
+            ->with('success', 'Je hebt successvol een informatie onderwerp toegevoegd');
     }
 
     public function edit($id)
@@ -113,7 +112,7 @@ class InformationController extends Controller
         $problem->links()->attach(request('links'));
 
         return redirect('information')
-            ->with('success', 'You successfully edited your post!');
+            ->with('success', 'Je hebt succesvol een informatie onderwerp gewijzigd');
     }
 
     public function destroy($id)
@@ -122,7 +121,7 @@ class InformationController extends Controller
 
         $problem->delete();
 
-        return redirect('information')->with('success', 'You successfully deleted your post!');
+        return redirect('information')->with('success', 'Je hebt succesvol een informatie onderwerp verwijderd');
     }
 
 }
