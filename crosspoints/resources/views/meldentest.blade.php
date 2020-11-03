@@ -5,18 +5,18 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header text-center">Moet ik melden?</div>
+                <h3 class="d-flex justify-content-center login-header info-header">"Moet ik me melden?" Test</h3>
 
-                <div class="card-body">
+                <div class="card-body login-body">
                     <h2 class="text-center">Vraag</h2>
 
                             <form action="{{route('checkscore')}}" method="POST">
                                 @csrf
                                 <div class="container">
-                                    <div class="row">
-                                        <div class="col-sm"><button value="1" name="button">ja</button></div>
-                                        <div class="col-sm"></div>
-                                        <div class="col-sm"><button value="2" name="button">nee</button></div>
+                                    <div class="row justify-content-center">
+                                        <div class=""><button value="1" name="button" class="melden-yesno-button">ja</button></div>
+
+                                        <div class=""><button value="2" name="button" class="melden-yesno-button">nee</button></div>
                                     </div>
                             </div>
                             </form>
