@@ -21,10 +21,10 @@
             <div class="row">
                 @foreach($problems as $problem)
                     <div class="card m-3">
-                        <div class="card-header">
+                        <div class="card-header login-header">
                             <h3>{{$problem->name}}</h3>
                         </div>
-                        <div class="card-body">
+                        <div class="card-body login-body">
                             <p>{{$problem->summary}}</p>
                             <ul>
                                 @foreach($problem->tips as $tip)
