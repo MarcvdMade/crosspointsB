@@ -36,4 +36,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    //path to profile
+    public function path($append = '')
+    {
+        $path = route('profile', $this->id);
+
+        return $append ? "{$path}/{$append}" : $path;
+    }
 }

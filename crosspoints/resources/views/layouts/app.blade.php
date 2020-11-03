@@ -18,9 +18,14 @@
 
     <!-- Font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <link rel="stylesheet" href="{{asset("css/app.css")}}">
     <link rel="stylesheet" href="{{asset("css/layout.css")}}">
     <link rel="stylesheet" href="{{asset("css/login-style.css")}}">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="{{asset("css/app.css")}}">
+
 </head>
 
 <body>
@@ -80,22 +85,22 @@
                     <div class="layout-sitenav d-flex justify-content-center">
                         <div class="layout-sitenav-block">
                             <a href="#" class="layout-sitenav-links"><img src="css/images/homelogo.png" alt="Navigation logo representing the home page" class="layout-sitenav-pic">
-                            {{--<button class="layout-sitenav-btn">--}}Home</a>
+                            Home</a>
                         </div>
 
                         <div class="layout-sitenav-block">
                             <a href="#" class="layout-sitenav-links"><img src="css/images/reportlogo.png" alt="Report logo representing the report page" class="layout-sitenav-pic">
-                            {{--<button class="layout-sitenav-btn">--}}Melden</a>
+                            Melden</a>
                         </div>
 
                         <div class="layout-sitenav-block">
                             <a href="#" class="layout-sitenav-links"><img src="css/images/booklogo.png" alt="Book logo representing the about page" class="layout-sitenav-pic">
-{{--                            <button class="layout-sitenav-btn">--}}Over Ons</a>
+                            Over Ons</a>
                         </div>
 
                         <div class="layout-sitenav-block">
                             <a href="#" class="layout-sitenav-links"><img src="css/images/phonelogo.png" alt="Phone logo representing the contact page" class="layout-sitenav-pic">
-                            {{--<button class="layout-sitenav-btn">--}}Contact</a></button>
+                            Contact</a></button>
                         </div>
             </div>
 
@@ -105,8 +110,10 @@
     <main class="py-4">
         @yield('content')
     </main>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 </body>
 </html>
