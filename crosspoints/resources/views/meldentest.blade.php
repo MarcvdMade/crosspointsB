@@ -8,25 +8,18 @@
                 <div class="card-header text-center">Moet ik melden?</div>
 
                 <div class="card-body">
-                    <h2 class="text-center">Voelde u zich onveilig?</h2>
-                    <div class="container">
-                        <div class="row">
+                    <h2 class="text-center">Vraag</h2>
 
-                            <form action="/yesscore" method="POST">
+                            <form action="{{route('checkscore')}}" method="POST">
                                 @csrf
-                                @method("put")
-                                <div class="col-sm"><button>yes</button></div>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-sm"><button value="1" name="button">ja</button></div>
+                                        <div class="col-sm"></div>
+                                        <div class="col-sm"><button value="2" name="button">nee</button></div>
+                                    </div>
+                            </div>
                             </form>
-
-                            <div class="col-sm"></div>
-                            <div class="col-sm-4.4"><button>no</button></div>
-                        </div>
-                        <div class="row mt-3">
-                            <div class="col-sm"></div>
-                            <div class="col-sm"></div>
-                            <div class="col-sm-4.4 text-muted"><a><ins>cancel</ins></a></div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

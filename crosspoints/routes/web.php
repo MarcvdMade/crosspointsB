@@ -21,4 +21,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/meldentest','FormController@index')->name('meldentest');
-Route::put('/addscore','FormController@addscore');
+Route::get('/testtrue')->name('testtrue');
+Route::get('/testfalse')->name('testfalse');
+Route::post('/checkscore','FormController@checkscore')->name('checkscore');
+Route::get('/show','questioncontroller@show');
