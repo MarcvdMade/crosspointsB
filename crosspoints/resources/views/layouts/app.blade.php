@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{asset("css/app.css")}}">
     <link rel="stylesheet" href="{{asset("css/layout.css")}}">
+    <link rel="stylesheet" href="{{asset("css/login-style.css")}}">
 </head>
 
 <body>
@@ -76,7 +77,7 @@
                 </div>
             </div>
         </nav>
-                    <div class="layout-sitenav">
+                    <div class="layout-sitenav d-flex justify-content-center">
                         <div class="layout-sitenav-block">
                             <a href="#" class="layout-sitenav-links"><img src="css/images/homelogo.png" alt="Navigation logo representing the home page" class="layout-sitenav-pic">
                             {{--<button class="layout-sitenav-btn">--}}Home</a>
