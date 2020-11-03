@@ -5,17 +5,13 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header text-center">Moet ik melden?</div>
-                <div class="card-body">
-                    <h2 class="text-center">Nee, wij raden u niet aan om te melden</h2>
-                    <form action="{{route('home')}}" method="POST">
-                        @method('GET')
-                        <button class="btn-primary" type="submit">Melden</button>
-                    </form>
-                    <form action="{{route('home')}}" method="POST">
-                        @method('GET')
-                        <button class="btn-primary" type="submit">Terug</button>
-                    </form>
+                <h3 class="d-flex justify-content-center login-header info-header">"Moet ik me melden?" Test</h3>
+                <div class="card-body login-body">
+                    <h4 class="text-center">Nee, wij raden u andere maatregelen aan. Zie de info pagina.</h4>
+                    <div class="row justify-content-center">
+                        <button class="melden-yesno-button"><a href="{{route('home')}}" class="melden-yesno-button-link">Melden</a></button>
+                        <button class="melden-yesno-button"><a href="{{route('home')}}" class="melden-yesno-button-link"> Terug</a></button>
+                    </div>
                 </div>
             </div>
         </div>

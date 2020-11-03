@@ -1,0 +1,97 @@
+.info-main-container {
+    margin-top: 40px;
+}
+
+.info-header {
+    padding: 10px 0;
+    margin: 0;
+    border-radius: 3px;
+}
+
+
+.info-main-button {
+    background-color: #0D7377!important;
+    color: white!important;
+    margin: 48px 32px;
+    border: none;
+    padding: 25px;
+    text-transform: uppercase;
+    border-radius: 6px;
+    transition: all 0.3s ease 0s;
+}
+
+.info-main-button-link {
+    padding: 25px;
+    color: white;
+}
+
+.info-main-button-link:hover {
+    color: white!important;
+    text-decoration: none;
+}
+
+.info-main-button:hover {
+    color: white !important;
+    font-weight: 700 !important;
+    background-color: #83D8CA!important;
+    letter-spacing: 2px;
+    -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    transition: all 0.3s ease 0s;
+}
+
+
+.info-problem-area {
+    width: 325px;
+}
+
+.info-tip-form {
+    background-color: #60D2C0;
+}
+
+.info-text-area {
+    margin-top: 48px;
+    width: 550px;
+    height: 120px;
+}
+
+.info-text-area:active {
+    border: none;
+}
+
+.info-create-textarea {
+    width: 325px;
+    height: 80px;
+}
+
+.info-create-button {
+    background-color: #0D7377!important;
+    color: white!important;
+    margin: 24px 16px;
+    border: none;
+    padding: 16px;
+    text-transform: uppercase;
+    border-radius: 6px;
+    transition: all 0.3s ease 0s;
+}
+
+.info-create-button:hover {
+    color: white !important;
+    font-weight: 700 !important;
+    background-color: #83D8CA!important;
+    letter-spacing: 2px;
+    -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    transition: all 0.3s ease 0s;
+}
+
+.info-link-page {
+    background-color: #60D2C0!important;
+    color: white;
+}
+
+.info-link-label {
+    padding: 4px 0;
+    font-size: 21px;
+}
+

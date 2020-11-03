@@ -1,14 +1,14 @@
 .login-header {
-    background-color: #0D7377;
+    background-color: #0D7377!important;
     color: white;
 }
 
 .login-body {
-    background-color: #60D2C0;
+    background-color: #60D2C0!important;
     color: white;
 }
 
 .submit-button {
-    background-color: #0D7377;
-    color: white;
+    background-color: #0D7377!important;
+    color: white!important;
 }

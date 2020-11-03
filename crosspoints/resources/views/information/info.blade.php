@@ -1,19 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container-fluid">
-        <div class="">
-            <h2>Informatie</h2>
-        </div>
+    <div class="container info-main-container">
+
         @if($message = Session::get('success'))
             <div class="alert alert-success mt-3 text-center">
                 <strong>{{$message}}</strong>
             </div>
         @endif
-        <div>
-            <a href="{{route('info-create')}}"><button class="btn btn-primary">Voeg een probleem toe.</button></a>
-            <a href="{{route('tip-create')}}"><button class="btn btn-primary">Voeg een tip toe.</button></a>
-            <a href="{{route('link-create')}}"><button class="btn btn-primary">Voeg een link toe.</button></a>
+
+        <div class="d-flex justify-content-center login-header info-header">
+            <h1>Informatie</h1>
+        </div>
+        <div class="card-body d-flex justify-content-center login-body">
+            <button class="info-main-button"><a href="{{route('tip-create')}}" class="info-main-button-link">Voeg een tip toe.</a></button>
+            <button class="info-main-button"><a href="{{route('info-create')}}" class="info-main-button-link">Voeg een probleem toe.</a></button>
+            <button class="info-main-button"><a href="{{route('link-create')}}" class="info-main-button-link">Voeg een link toe.</a></button>
         </div>
         <div class="container-fluid">
             <div class="row">
