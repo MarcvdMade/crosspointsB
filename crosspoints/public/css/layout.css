@@ -1,0 +1,59 @@
+a:hover{
+    text-decoration: none;
+}
+
+.navbar-logo {
+    width: 45px;
+    height: 45px;
+    margin: 0 1rem 0 0;
+}
+
+.layout-navbar {
+    background-color: #0D7377;
+}
+
+.layout-sitenav {
+    background-color: #60D2C0;
+}
+
+
+.layout-sitenav-block {
+    display: inline-block;
+    padding: 5px 8px;
+    transition: 0.3s;
+}
+
+.layout-sitenav-block:hover{
+    background-color: #0D7377;
+
+}
+
+.layout-sitenav-links {
+    color: white;
+    opacity: 0;
+    text-decoration: none;
+}
+
+.layout-sitenav-links:hover {
+    opacity: 1;
+    color: white;
+    text-decoration: none;
+}
+
+.layout-sitenav-pic:hover ~ .layout-sitenav-links {
+    opacity: 1;
+    color: white;
+    text-decoration: none;
+}
+
+.layout-sitenav-pic {
+    width: 32px;
+    height: 32px;
+    margin: 4px auto 0 auto;
+    display: block;
+}
+
+
+
+
+
