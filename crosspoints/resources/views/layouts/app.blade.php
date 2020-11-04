@@ -95,13 +95,13 @@
                         </div>
 
                         <div class="layout-sitenav-block">
-                            <a href="#" class="layout-sitenav-links"><img src="css/images/reportlogo.png" alt="Report logo representing the report page" class="layout-sitenav-pic">
+                            <a href="{{route('meldentest')}}" class="layout-sitenav-links"><img src="css/images/reportlogo.png" alt="Report logo representing the report page" class="layout-sitenav-pic">
                             Melden</a>
                         </div>
 
                         <div class="layout-sitenav-block">
-                            <a href="#" class="layout-sitenav-links"><img src="css/images/booklogo.png" alt="Book logo representing the about page" class="layout-sitenav-pic">
-                            Over Ons</a>
+                            <a href="{{route('information')}}" class="layout-sitenav-links"><img src="css/images/booklogo.png" alt="Book logo representing the about page" class="layout-sitenav-pic">
+                            Informatie</a>
                         </div>
 
                         <div class="layout-sitenav-block">
