@@ -39,7 +39,7 @@
     <div id="">
         <nav class="navbar navbar-expand-md navbar-light shadow-sm layout-navbar">
             <div class="container">
-                <img src="css/images/logo.png" class="figure-img navbar-logo">
+                <img src="{{asset('css/images/logo.png')}}" class="figure-img navbar-logo">
                 <a class="navbar-brand text-light" href="{{ url('/') }}">
                     Team Crosspoints B
                 </a>
@@ -90,22 +90,22 @@
         </nav>
                     <div class="layout-sitenav d-flex justify-content-center">
                         <div class="layout-sitenav-block">
-                            <a href="{{route('home')}}" class="layout-sitenav-links"><img src="css/images/homelogo.png" alt="Navigation logo representing the home page" class="layout-sitenav-pic">
+                            <a href="{{route('home')}}" class="layout-sitenav-links"><img src="{{asset('css/images/homelogo.png')}}" alt="Navigation logo representing the home page" class="layout-sitenav-pic">
                             Home</a>
                         </div>
 
                         <div class="layout-sitenav-block">
-                            <a href="{{route('meldentest')}}" class="layout-sitenav-links"><img src="css/images/reportlogo.png" alt="Report logo representing the report page" class="layout-sitenav-pic">
+                            <a href="{{route('meldentest')}}" class="layout-sitenav-links"><img src="{{asset('css/images/reportlogo.png')}}" alt="Report logo representing the report page" class="layout-sitenav-pic">
                             Melden</a>
                         </div>
 
                         <div class="layout-sitenav-block">
-                            <a href="{{route('information')}}" class="layout-sitenav-links"><img src="css/images/booklogo.png" alt="Book logo representing the about page" class="layout-sitenav-pic">
+                            <a href="{{route('information')}}" class="layout-sitenav-links"><img src="{{asset('css/images/booklogo.png')}}" alt="Book logo representing the about page" class="layout-sitenav-pic">
                             Informatie</a>
                         </div>
 
                         <div class="layout-sitenav-block">
-                            <a href="#" class="layout-sitenav-links"><img src="css/images/phonelogo.png" alt="Phone logo representing the contact page" class="layout-sitenav-pic">
+                            <a href="#" class="layout-sitenav-links"><img src="{{asset('css/images/phonelogo.png')}}" alt="Phone logo representing the contact page" class="layout-sitenav-pic">
                             Contact</a></button>
                         </div>
             </div>
