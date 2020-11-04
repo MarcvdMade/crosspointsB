@@ -10,7 +10,7 @@
             </div>
         @endif
         @can('isUserProfile', $user)
-            <a href="{{$user->path('edit')}}"><button class="btn btn-primary">Wijzig gegevens</button></a>
+            <a href="{{$user->path('wijzig')}}"><button class="btn btn-primary">Wijzig gegevens</button></a>
         @endcan
     </div>
 @endsection
