@@ -24,6 +24,7 @@ Route::get('/meldentest','FormController@index')->name('meldentest');
 Route::get('/testtrue')->name('testtrue');
 Route::get('/testfalse')->name('testfalse');
 Route::post('/checkscore','FormController@checkscore')->name('checkscore');
+Route::post('/goback','FormController@goback')->name('goback');
 //profile routes
 Route::patch('profiles/{user}', 'ProfilesController@update');
 Route::get('profiles/{user}', 'ProfilesController@show')->name('profile');

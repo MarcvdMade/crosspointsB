@@ -21,6 +21,10 @@
                                     </div>
                             </div>
                             </form>
+                            <form action="{{route('goback')}}" method="POST">
+                                @csrf
+                                <button class='btn-primary' type="submit">Go back</button>
+                            </form>
                 </div>
             </div>
         </div>
