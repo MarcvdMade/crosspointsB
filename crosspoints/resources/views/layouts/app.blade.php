@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Team Crosspoints B</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -18,68 +18,30 @@
 
     <!-- Font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <link rel="stylesheet" href="{{asset("css/app.css")}}">
+    <link rel="stylesheet" href="{{asset("css/layout.css")}}">
+    <link rel="stylesheet" href="{{asset("css/login-style.css")}}">
+    <link rel="stylesheet" href="{{asset("css/info.css")}}">
+    <link rel="stylesheet" href="{{asset("css/melden.css")}}">
 
     <!-- Styles -->
-    <style>
-        /*html, body {*/
-        /*    background-color: #fff;*/
-        /*    color: #636b6f;*/
-        /*    font-family: 'Nunito', sans-serif;*/
-        /*    font-weight: 200;*/
-        /*    height: 100vh;*/
-        /*    margin: 0;*/
-        /*}*/
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
+    <link rel="stylesheet" href="{{asset("css/app.css")}}">
 
-        /*.full-height {*/
-        /*    height: 100vh;*/
-        /*}*/
 
-        /*.flex-center {*/
-        /*    align-items: center;*/
-        /*    display: flex;*/
-        /*    justify-content: center;*/
-        /*}*/
 
-        /*.position-ref {*/
-        /*    position: relative;*/
-        /*}*/
-
-        /*.top-right {*/
-        /*    position: absolute;*/
-        /*    right: 10px;*/
-        /*    top: 18px;*/
-        /*}*/
-
-        /*.content {*/
-        /*    text-align: center;*/
-        /*}*/
-
-        /*.title {*/
-        /*    font-size: 84px;*/
-        /*}*/
-
-        /*.links > a {*/
-        /*    color: #636b6f;*/
-        /*    padding: 0 25px;*/
-        /*    font-size: 13px;*/
-        /*    font-weight: 600;*/
-        /*    letter-spacing: .1rem;*/
-        /*    text-decoration: none;*/
-        /*    text-transform: uppercase;*/
-        /*}*/
-
-        /*.m-b-md {*/
-        /*    margin-bottom: 30px;*/
-        /*}*/
-    </style>
 </head>
+
 <body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+    <header>
+    <div id="">
+        <nav class="navbar navbar-expand-md navbar-light shadow-sm layout-navbar">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                <img src="{{asset('css/images/logo.png')}}" class="figure-img navbar-logo">
+                <a class="navbar-brand text-light" href="{{ url('/') }}">
+                    Team Crosspoints B
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -92,20 +54,20 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav">
                         <!-- Authentication Links -->
                         @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            <li class="nav-item ">
+                                <a class="nav-link text-light" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link text-light" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle text-light text-capitalize" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
 
@@ -126,13 +88,40 @@
                 </div>
             </div>
         </nav>
+                    <div class="layout-sitenav d-flex justify-content-center">
+                        <div class="layout-sitenav-block">
+                            <a href="{{route('home')}}" class="layout-sitenav-links"><img src="{{asset('css/images/homelogo.png')}}" alt="Navigation logo representing the home page" class="layout-sitenav-pic">
+                            Home</a>
+                        </div>
 
-        <main class="py-4">
-            @yield('content')
-        </main>
+                        <div class="layout-sitenav-block">
+                            <a href="{{route('meldentest')}}" class="layout-sitenav-links"><img src="{{asset('css/images/reportlogo.png')}}" alt="Report logo representing the report page" class="layout-sitenav-pic">
+                            Melden</a>
+                        </div>
+
+                        <div class="layout-sitenav-block">
+                            <a href="{{route('information')}}" class="layout-sitenav-links"><img src="{{asset('css/images/booklogo.png')}}" alt="Book logo representing the about page" class="layout-sitenav-pic">
+                            Informatie</a>
+                        </div>
+
+                        <div class="layout-sitenav-block">
+                            <a href="#" class="layout-sitenav-links"><img src="{{asset('css/images/phonelogo.png')}}" alt="Phone logo representing the contact page" class="layout-sitenav-pic">
+                            Contact</a></button>
+                        </div>
+            </div>
+
+
     </div>
+    </header>
+    <main class="py-4">
+        @yield('content')
+    </main>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 </body>
 </html>
