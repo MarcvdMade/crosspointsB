@@ -16,15 +16,32 @@ class FormController extends Controller
 
     public function index(){
         $user=Auth::user();
-
+        session()->forget('testscore');
+        session()->forget('question');
+        session()->put('testscore',0);
+        session()->put('question',0);
         return view('meldentest', ['user'=>$user]);
     }
     public function checkscore(){
         $answer = request('button');
         if($answer == 1) {
-            return view('/testtrue');
+            $test = session()->get('testscore');
+            $question = session()->get('question');
+
+            $testupdate = $test+1;
+            $questionupdate = $question+1;
+
+            session()->put('testscore',$testupdate);
+            session()->put('question',$questionupdate);
+            return view('/testform/meldentestQ'.$questionupdate, ['test'=>$testupdate], ['question'=>$questionupdate]);
         }else{
-           return view('/testfalse');
+            $test = session()->get('testscore');
+            $question = session()->get('question');
+
+            $questionupdate = $question+1;
+
+            session()->put('question',$questionupdate);
+            return view('/testform/meldentestQ'.$questionupdate, ['test'=>$test], ['question'=>$questionupdate]);
         }
 
     }
