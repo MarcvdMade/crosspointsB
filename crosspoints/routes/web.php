@@ -24,10 +24,12 @@ Route::get('/meldentest','FormController@index')->name('meldentest');
 Route::get('/testtrue')->name('testtrue');
 Route::get('/testfalse')->name('testfalse');
 Route::post('/checkscore','FormController@checkscore')->name('checkscore');
+
 //profile routes
-Route::patch('profiel/{user}', 'ProfilesController@update');
-Route::get('profiel/{user}', 'ProfilesController@show')->name('profile');
-Route::get('profiel/{user}/wijzig', 'ProfilesController@edit');
+Route::patch('profiel/{user:name}', 'ProfilesController@update');
+Route::get('profiel/{user:name}', 'ProfilesController@show')->name('profile');
+Route::get('profiel/{user:name}/wijzig', 'ProfilesController@edit');
+
 //information routes
 //index
 Route::get('informatie', 'InformationController@index')->name('information');
@@ -47,4 +49,14 @@ Route::post('tip/save', 'TipController@store')->name('tip-save');
 //add link
 Route::get('link', 'LinkController@create')->name('link-create');
 Route::post('link/save', 'LinkController@store')->name('link-save');
+
+//admin routes
+Route::middleware('can:is_admin')->group(function () {
+    Route::get('admin', 'AdminController@index')->name('admin');
+});
+
+//counselor routes
+Route::middleware('can:is_counselor')->group(function () {
+    Route::get('vertrouwenspersoon', 'CounselorController@index')->name('vertrouwenspersoon');
+});
 

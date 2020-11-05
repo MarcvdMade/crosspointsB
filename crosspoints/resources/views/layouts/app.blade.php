@@ -73,6 +73,12 @@
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{route('profile', auth()->user())}}">Profiel</a>
+                                    @can('is_admin')
+                                        <a class="dropdown-item" href="{{route('admin')}}">Admin pagina</a>
+                                    @endcan
+                                    @can('is_counselor')
+                                        <a class="dropdown-item" href="{{route('vertrouwenspersoon')}}">Vertrouwenspersoon pagina</a>
+                                    @endcan
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
