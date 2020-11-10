@@ -26,26 +26,37 @@ Route::get('/testfalse')->name('testfalse');
 Route::post('/checkscore','FormController@checkscore')->name('checkscore');
 Route::post('/goback','FormController@goback')->name('goback');
 //profile routes
-Route::patch('profiles/{user}', 'ProfilesController@update');
-Route::get('profiles/{user}', 'ProfilesController@show')->name('profile');
-Route::get('profiles/{user}/edit', 'ProfilesController@edit');
+Route::patch('profiel/{user:name}', 'ProfilesController@update');
+Route::get('profiel/{user:name}', 'ProfilesController@show')->name('profile');
+Route::get('profiel/{user:name}/wijzig', 'ProfilesController@edit');
+
 //information routes
 //index
-Route::get('information', 'InformationController@index')->name('information');
+Route::get('informatie', 'InformationController@index')->name('information');
 //create
-Route::get('information.create', 'InformationController@create')->name('info-create');
-Route::post('information', 'InformationController@store');
+Route::get('informatie/create', 'InformationController@create')->name('info-create');
+Route::post('informatie', 'InformationController@store');
 //show
-Route::get('information/{id}', 'InformationController@show')->name('info-show');
+Route::get('informatie/{id}', 'InformationController@show')->name('info-show');
 //edit
-Route::get('information/{id}/edit', 'InformationController@edit')->name('info-edit');
-Route::put('information/{id}', 'InformationController@update');
+Route::get('informatie/{id}/wijzig', 'InformationController@edit')->name('info-edit');
+Route::put('informatie/{id}', 'InformationController@update');
 //delete
-Route::delete('information/{id}', 'InformationController@destroy');
+Route::delete('informatie/{id}', 'InformationController@destroy');
 //add tip
 Route::get('tip', 'TipController@create')->name('tip-create');
 Route::post('tip/save', 'TipController@store')->name('tip-save');
 //add link
 Route::get('link', 'LinkController@create')->name('link-create');
 Route::post('link/save', 'LinkController@store')->name('link-save');
+
+//admin routes
+Route::middleware('can:is_admin')->group(function () {
+    Route::get('admin', 'AdminController@index')->name('admin');
+});
+
+//counselor routes
+Route::middleware('can:is_counselor')->group(function () {
+    Route::get('vertrouwenspersoon', 'CounselorController@index')->name('vertrouwenspersoon');
+});
 

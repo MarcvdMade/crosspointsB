@@ -39,7 +39,7 @@
     <div id="">
         <nav class="navbar navbar-expand-md navbar-light shadow-sm layout-navbar">
             <div class="container">
-                <img src="css/images/logo.png" class="figure-img navbar-logo">
+                <img src="{{asset('css/images/logo.png')}}" class="figure-img navbar-logo">
                 <a class="navbar-brand text-light" href="{{ url('/') }}">
                     Team Crosspoints B
                 </a>
@@ -72,10 +72,17 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{route('profile', auth()->user())}}">Profiel</a>
+                                    @can('is_admin')
+                                        <a class="dropdown-item" href="{{route('admin')}}">Admin pagina</a>
+                                    @endcan
+                                    @can('is_counselor')
+                                        <a class="dropdown-item" href="{{route('vertrouwenspersoon')}}">Vertrouwenspersoon pagina</a>
+                                    @endcan
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('Uitloggen') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -90,27 +97,25 @@
         </nav>
                     <div class="layout-sitenav d-flex justify-content-center">
                         <div class="layout-sitenav-block">
-                            <a href="{{route('home')}}" class="layout-sitenav-links"><img src="css/images/homelogo.png" alt="Navigation logo representing the home page" class="layout-sitenav-pic">
+                            <a href="{{route('home')}}" class="layout-sitenav-links"><img src="{{asset('css/images/homelogo.png')}}" alt="Navigation logo representing the home page" class="layout-sitenav-pic">
                             Home</a>
                         </div>
 
                         <div class="layout-sitenav-block">
-                            <a href="{{route('meldentest')}}" class="layout-sitenav-links"><img src="css/images/reportlogo.png" alt="Report logo representing the report page" class="layout-sitenav-pic">
+                            <a href="{{route('meldentest')}}" class="layout-sitenav-links"><img src="{{asset('css/images/reportlogo.png')}}" alt="Report logo representing the report page" class="layout-sitenav-pic">
                             Melden</a>
                         </div>
 
                         <div class="layout-sitenav-block">
-                            <a href="{{route('information')}}" class="layout-sitenav-links"><img src="css/images/booklogo.png" alt="Book logo representing the about page" class="layout-sitenav-pic">
+                            <a href="{{route('information')}}" class="layout-sitenav-links"><img src="{{asset('css/images/booklogo.png')}}" alt="Book logo representing the about page" class="layout-sitenav-pic">
                             Informatie</a>
                         </div>
 
                         <div class="layout-sitenav-block">
-                            <a href="#" class="layout-sitenav-links"><img src="css/images/phonelogo.png" alt="Phone logo representing the contact page" class="layout-sitenav-pic">
+                            <a href="#" class="layout-sitenav-links"><img src="{{asset('css/images/phonelogo.png')}}" alt="Phone logo representing the contact page" class="layout-sitenav-pic">
                             Contact</a></button>
                         </div>
             </div>
-
-
     </div>
     </header>
     <main class="py-4">
@@ -118,9 +123,6 @@
     </main>
     </div>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
-
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 </body>
