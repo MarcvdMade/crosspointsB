@@ -18,15 +18,23 @@ class FormController extends Controller
         $user=Auth::user();
         session()->forget('testscore');
         session()->forget('question');
+        session()->forget('answers');
         session()->put('testscore',0);
         session()->put('question',0);
+        session()->put('answers', []);
         return view('meldentest', ['user'=>$user]);
     }
+
     public function checkscore(){
         $answer = request('button');
+        $test = session()->get('testscore');
+        $question = session()->get('question');
+        $answers = session()->get('answers');
+
+        if($question == 4){
+            abort(403, "Seems like the next few questions have not been set yet - (ʘᗩʘ’) ");
+        }
         if($answer == 1) {
-            $test = session()->get('testscore');
-            $question = session()->get('question');
             session()->put('lastbutton',1);
 
             $testupdate = $test+1;
@@ -34,32 +42,38 @@ class FormController extends Controller
 
             session()->put('testscore',$testupdate);
             session()->put('question',$questionupdate);
+            session()->push('answers', 1);
 
             return view('/testform/meldentestQ'.$questionupdate, ['test'=>$testupdate], ['question'=>$questionupdate]);
         }else{
-            $test = session()->get('testscore');
-            $question = session()->get('question');
             session()->put('lastbutton',0);
 
             $questionupdate = $question+1;
+            session()->push('answers', 0);
 
             session()->put('question',$questionupdate);
             return view('/testform/meldentestQ'.$questionupdate, ['test'=>$test], ['question'=>$questionupdate]);
         }
-
     }
+
     public function goback(){
         $test = session()->get('testscore');
         $question = session()->get('question');
-        $lastbutton = session()->get('lastbutton');
+        $answers = session()->get('answers');
+        if($question == 1){
+            return ($this->index());
+        }
 
         $questionupdate = $question-1;
-        if($lastbutton==1){
+        if (last($answers) == 1){
             $test = $test-1;
         }
+        array_pop($answers);
 
         session()->put('question',$questionupdate);
         session()->put('testscore',$test);
+        session()->put('answers', $answers);
+
 
         return view('/testform/meldentestQ'.$questionupdate, ['test'=>$test], ['question'=>$questionupdate]);
     }
