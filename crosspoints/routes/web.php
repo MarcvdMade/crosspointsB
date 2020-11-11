@@ -50,6 +50,9 @@ Route::post('tip/save', 'TipController@store')->name('tip-save');
 Route::get('link', 'LinkController@create')->name('link-create');
 Route::post('link/save', 'LinkController@store')->name('link-save');
 
+//melding
+Route::get('melding/meld', 'MeldController@index')->name('meld');
+
 //admin routes
 Route::middleware('can:is_admin')->group(function () {
     Route::get('admin', 'AdminController@index')->name('admin');
