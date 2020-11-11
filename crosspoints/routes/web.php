@@ -24,9 +24,7 @@ Route::get('/meldentest','FormController@index')->name('meldentest');
 Route::get('/testtrue')->name('testtrue');
 Route::get('/testfalse')->name('testfalse');
 Route::get('/company','CompanyController@index')->name('company');
-Route::get('/vertrouwenspersonen','VPController@index')->name('VP');
 Route::post('/createcompany', '\App\Http\Controllers\CompanyController@store')->middleware('auth')->name('createcompany');
-Route::post('/createvp', '\App\Http\Controllers\VPController@store')->middleware('auth')->name('createvp');
 Route::post('/checkscore','FormController@checkscore')->name('checkscore');
 Route::post('/goback','FormController@goback')->name('goback');
 //profile routes
