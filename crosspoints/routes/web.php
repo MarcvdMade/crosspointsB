@@ -30,12 +30,6 @@ Route::patch('profiel/{user:name}', 'ProfilesController@update');
 Route::get('profiel/{user:name}', 'ProfilesController@show')->name('profile');
 Route::get('profiel/{user:name}/wijzig', 'ProfilesController@edit')->name('edit-user');
 
-//information routes
-//index
-Route::get('informatie', 'InformationController@index')->name('information');
-//show
-Route::get('informatie/{id}', 'InformationController@show')->name('info-show');
-
 //admin routes
 Route::middleware('can:is_admin')->group(function () {
     Route::get('admin', 'AdminController@index')->name('admin');
@@ -57,6 +51,12 @@ Route::middleware('can:is_admin')->group(function () {
     Route::get('link', 'LinkController@create')->name('link-create');
     Route::post('link/save', 'LinkController@store')->name('link-save');
 });
+
+    //information routes
+    //index
+    Route::get('informatie', 'InformationController@index')->name('information');
+    //show
+    Route::get('informatie/{id}', 'InformationController@show')->name('info-show');
 
 //counselor routes
 Route::middleware('can:is_counselor')->group(function () {
