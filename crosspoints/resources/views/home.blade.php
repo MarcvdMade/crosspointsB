@@ -17,9 +17,7 @@
                     {{ __('You are logged in!') }}
                 </div>
             </div>
-            <div class="links">
-                <a href="{{route('information')}}">Information</a>
-            </div>
+            <div class="links"></div>
         </div>
     </div>
 </div>

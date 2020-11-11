@@ -20,18 +20,7 @@
             @endforeach
         </div>
         <div>
-            <a href="{{route('info-edit', $problem['id'])}}">Wijzig probleem</a>
-        </div>
-        <div>
             <a href="{{route('information')}}">Terug</a>
-        </div>
-        <div>
-            <form method="POST" action="{{route('info-show', $problem['id'])}}">
-                @csrf
-                @method('DELETE')
-
-                <button type="submit">Verwijder probleem</button>
-            </form>
         </div>
     </div>
 @endsection
