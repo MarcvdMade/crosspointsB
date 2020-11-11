@@ -1,0 +1,31 @@
+.melden-yesno-button {
+    background-color: #0D7377!important;
+    color: white!important;
+    margin: 32px 32px;
+    border: none;
+    padding: 21px 48px;
+    text-transform: uppercase;
+    border-radius: 6px;
+    transition: all 0.3s ease 0s;
+}
+
+.melden-yesno-button:hover {
+    color: white !important;
+    font-weight: 700 !important;
+    background-color: #83D8CA!important;
+    letter-spacing: 2px;
+    -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    transition: all 0.3s ease 0s;
+}
+
+.melden-yesno-button-link {
+    padding: 25px;
+    color: white;
+}
+
+.melden-yesno-button-link:hover {
+    color: white!important;
+    text-decoration: none;
+}
+
