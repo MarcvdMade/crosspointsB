@@ -17,21 +17,21 @@ class ProfilesController extends Controller
 
     public function show(User $user)
     {
-        $this->authorize('isUserProfile', $user);
+        $this->authorize('myProfile', $user);
 
         return view('profiles.show', compact('user'));
     }
 
     public function edit(User $user)
     {
-        $this->authorize('isUserProfile', $user);
+        $this->authorize('myProfile', $user);
 
         return view('profiles.edit', compact('user'));
     }
 
     public function update(User $user)
     {
-        $this->authorize('isUserProfile', $user);
+        $this->authorize('myProfile', $user);
 
         request()->validate([
             'name' => ['required', 'string', 'max:255'],
