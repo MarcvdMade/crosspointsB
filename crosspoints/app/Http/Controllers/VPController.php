@@ -1,21 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Providers\RouteServiceProvider;
 use App\User;
-use Illuminate\Http\Request;
-use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
-use Illuminate\Support\Facades\DB;
 
 class VPController extends Controller
 {
-    use RegistersUsers;
-    protected $redirectTo = RouteServiceProvider::HOME;
-    protected function index(){
+    protected function index(User $user){
+        $this->authorize('is_admin', $user);
         return view('admin.makeVP');
     }
 
