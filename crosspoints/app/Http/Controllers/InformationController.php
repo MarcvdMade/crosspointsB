@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Link;
 use App\Problem;
 use App\Tip;
+use App\User;
 use Illuminate\Http\Request;
 
 class InformationController extends Controller
@@ -35,8 +36,10 @@ class InformationController extends Controller
 
     }
 
-    public function create()
+    public function create(User $user)
     {
+        $this->authorize('is_admin', $user);
+
         //shows view to create a new resource
         $links = Link::all();
         $tips = Tip::all();
@@ -47,8 +50,10 @@ class InformationController extends Controller
         ]);
     }
 
-    public function store()
+    public function store(User $user)
     {
+        $this->authorize('is_admin', $user);
+
         request()->validate([
             'problem' => 'required',
             'summary' => 'required',
@@ -67,12 +72,14 @@ class InformationController extends Controller
         $problem->tips()->attach(request('tips'));
         $problem->links()->attach(request('links'));
 
-        return redirect('information')
+        return redirect()->route('problem')
             ->with('success', 'Je hebt successvol een informatie onderwerp toegevoegd');
     }
 
-    public function edit($id)
+    public function edit($id, User $user)
     {
+        $this->authorize('is_admin', $user);
+
         //renders a list of a resource
         $problem = Problem::find($id);
         $links = Link::all();
@@ -86,8 +93,9 @@ class InformationController extends Controller
         ]);
     }
 
-    public function update($id)
+    public function update($id, User $user)
     {
+        $this->authorize('is_admin', $user);
 
         $problem = Problem::find($id);
 
@@ -111,17 +119,20 @@ class InformationController extends Controller
         $problem->tips()->attach(request('tips'));
         $problem->links()->attach(request('links'));
 
-        return redirect('information')
+        return redirect()->route('problem')
             ->with('success', 'Je hebt succesvol een informatie onderwerp gewijzigd');
     }
 
-    public function destroy($id)
+    public function destroy($id, User $user)
     {
+        $this->authorize('is_admin', $user);
+
         $problem = Problem::find($id);
 
         $problem->delete();
 
-        return redirect('information')->with('success', 'Je hebt succesvol een informatie onderwerp verwijderd');
+        return redirect()->route('problem')
+            ->with('success', 'Je hebt succesvol een informatie onderwerp verwijderd');
     }
 
 }
