@@ -107,6 +107,10 @@
                         </div>
 
                         <div class="layout-sitenav-block">
+                            <a href="{{route('meld')}}" class="layout-sitenav-links"><i class="fa fa-edit" style="color: white" size="10px"></i></a>
+                        </div>
+
+                        <div class="layout-sitenav-block">
                             <a href="{{route('information')}}" class="layout-sitenav-links"><img src="{{asset('css/images/booklogo.png')}}" alt="Book logo representing the about page" class="layout-sitenav-pic">
                             Informatie</a>
                         </div>

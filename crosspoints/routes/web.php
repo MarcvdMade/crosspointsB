@@ -30,6 +30,10 @@ Route::patch('profiel/{user:name}', 'ProfilesController@update');
 Route::get('profiel/{user:name}', 'ProfilesController@show')->name('profile');
 Route::get('profiel/{user:name}/wijzig', 'ProfilesController@edit')->name('edit-user');
 
+//melding
+Route::get('melding/meld', 'MeldController@index')->name('meld');
+Route::post('create-post', 'MeldController@createMeld')->name('meld.create');
+
 //admin routes
 Route::middleware('can:is_admin')->group(function () {
     Route::get('admin', 'AdminController@index')->name('admin');
