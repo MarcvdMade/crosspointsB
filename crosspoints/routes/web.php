@@ -23,6 +23,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/meldentest','FormController@index')->name('meldentest');
 Route::get('/testtrue')->name('testtrue');
 Route::get('/testfalse')->name('testfalse');
+Route::get('/company','CompanyController@index')->name('company');
+Route::post('/createcompany', '\App\Http\Controllers\CompanyController@store')->middleware('auth')->name('createcompany');
 Route::post('/checkscore','FormController@checkscore')->name('checkscore');
 Route::post('/goback','FormController@goback')->name('goback');
 //profile routes
