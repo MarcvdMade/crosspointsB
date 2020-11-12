@@ -8,7 +8,8 @@
                 <h3 class="d-flex justify-content-center login-header info-header">"Moet ik me melden?" Test</h3>
 
                 <div class="card-body login-body">
-                    <h2 class="text-center">Vraag 0</h2>
+                    <h2 class="text-center">Vraag {{$question}}</h2>
+                    <h2 class="text-center">Score {{$test}}</h2>
 
                             <form action="{{route('checkscore')}}" method="POST">
                                 @csrf
@@ -20,6 +21,10 @@
                                     </div>
                             </div>
                             </form>
+                    <form action="{{route('goback')}}" method="POST">
+                        @csrf
+                        <button class='btn-primary' type="submit">Go back</button>
+                    </form>
                 </div>
             </div>
         </div>
