@@ -35,6 +35,11 @@ Route::middleware('can:is_admin')->group(function () {
     Route::get('admin', 'AdminController@index')->name('admin');
     Route::get('admin/ongewenst-gedrag', 'AdminController@problem')->name('problem');
 
+    //toevoegen VP
+    Route::get('admin/registerVP', 'VPController@index')->name('registerVP');
+    Route::post('admin', 'VPController@store')->name('registerVP');
+
+
     //toevoegen bedrijf
     Route::get('/company','CompanyController@index')->name('company');
     Route::post('/createcompany', '\App\Http\Controllers\CompanyController@store')->middleware('auth')->name('createcompany');
