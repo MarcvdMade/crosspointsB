@@ -9,21 +9,30 @@
                     <h3 class="d-flex justify-content-center login-header info-header">Melding maken</h3>
 
                     <div class="card-body login-body">
-                        <form method="POST">
+                        <form method="POST" action="{{route('meld.create')}}">
                             @csrf
                             <div class="form-group">
                                 <label for="situation">Situatie:</label>
                                 <textarea name="situation" class="form-control" rows="3" placeholder="Omschrijf de situatie zo duidelijk mogelijk"></textarea>
+                                @error('situation')
+                                <p>{{$errors->first('situation')}}</p>
+                                @enderror
                             </div>
 
                             <div class="form-group">
                                 <label for="since">Sinds wanneer is deze situatie aan de gang?</label>
                                 <input type="text" name="since" class="form-control" />
+                                @error('since')
+                                <p>{{$errors->first('since')}}</p>
+                                @enderror
                             </div>
 
                             <div class="form-group">
                                 <label for="experience">Hoe heeft u deze situatie ervaart? 0 is het doet me niks 10 is het meest heftige voor u</label>
                                 <textarea name="experience" class="form-control" rows="3" placeholder="s"></textarea>
+                                @error('experience')
+                                <p>{{$errors->first('experience')}}</p>
+                                @enderror
                             </div>
 
                             <div class="form-group">
@@ -33,6 +42,9 @@
                                         <option value="Man">Man</option>
                                         <option value="Vrouw">Vrouw</option>
                                     </select>
+                                @error('counselor')
+                                <p>{{$errors->first('counselor')}}</p>
+                                @enderror
                             </div>
 
                             <div class="form-group">
@@ -41,15 +53,25 @@
                                         <option value="E-mail">E-mail</option>
                                         <option value="Telefoon">Telefoon</option>
                                     </select>
+                                @error('contact')
+                                <p>{{$errors->first('contact')}}</p>
+                                @enderror
                             </div>
 
                             <div class="form-group">
                                 <label for="phone">Telefoon nummer:</label>
                                 <input type="text" name="phone" class="form-control" />
+                                @error('phone')
+                                <p>{{$errors->first('phone')}}</p>
+                                @enderror
                             </div>
 
                             <div class="form-group">
-                                <label for="conditions">U dient akkoord te gaan met de algemene voorwaarden als u het formulier wilt opsturen <input type="checkbox" name="conditions"></label>
+                                <label for="conditions">U dient akkoord te gaan met de algemene voorwaarden als u het formulier wilt opsturen </label>
+                                <input type="checkbox" name="conditions" required>
+                                @error('conditions')
+                                <p>{{$errors->first('conditions')}}</p>
+                                @enderror
                             </div>
 
                             <button type="submit" class="btn btn-success" >Verzend</button>

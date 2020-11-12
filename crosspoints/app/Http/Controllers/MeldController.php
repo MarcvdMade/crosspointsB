@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Meld;
 
 class MeldController extends Controller
 {
@@ -16,5 +17,28 @@ class MeldController extends Controller
         return view('melding/meld');
     }
 
+    public function createMeld()
+    {
+        request()->validate([
+            'situation' => 'required',
+            'since' => 'required',
+            'experience' => 'required',
+            'counselor' => 'required',
+            'contact' => 'required',
+            'phone' => 'required',
+            'conditions' => 'required'
+        ]);
+
+        $meld = new Meld();
+        $meld->situation = request('situation');
+        $meld->since = request('since');
+        $meld->experience = request('experience');
+        $meld->counselor = request('counselor');
+        $meld->contact = request('contact');
+        $meld->phone = request('phone');
+        $meld->conditions = true;
+        $meld->save();
+        return redirect('/home')->with('success','Het formulier is verzonden, binnen 2 dagen wordt er contact opgenomen');
+    }
 
 }

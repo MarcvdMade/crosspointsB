@@ -52,6 +52,7 @@ Route::post('link/save', 'LinkController@store')->name('link-save');
 
 //melding
 Route::get('melding/meld', 'MeldController@index')->name('meld');
+Route::post('create-post', 'MeldController@createMeld')->name('meld.create');
 
 //admin routes
 Route::middleware('can:is_admin')->group(function () {
