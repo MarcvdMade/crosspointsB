@@ -2,6 +2,11 @@
 
 @section('content')
     <div class="container-fluid">
+        @if($message = Session::get('success'))
+            <div class="alert alert-success mt-3 text-center">
+                <strong>{{$message}}</strong>
+            </div>
+        @endif
         <h2>Welkom, admin {{auth()->user()->name}}</h2>
         <div class="links">
             <a href="{{route('problem')}}"><button class="btn btn-primary">Voeg soorten ongewenst gedrag toe</button></a>

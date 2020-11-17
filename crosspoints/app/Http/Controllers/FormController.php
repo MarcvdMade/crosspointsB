@@ -24,6 +24,9 @@ class FormController extends Controller
         session()->put('answers', []);
         return view('meldentest', ['user'=>$user]);
     }
+    public function indexinfo(){
+        return view('meldentestinfo');
+    }
 
     public function checkscore(){
         $answer = request('button');
@@ -32,7 +35,11 @@ class FormController extends Controller
         $answers = session()->get('answers');
 
         if($question == 4){
-            abort(403, "Seems like the next few questions have not been set yet - (ʘᗩʘ’) ");
+            if($test <2){
+                return view('testfalse');
+            }else{
+                return view('testtrue');
+            }
         }
         if($answer == 1) {
             session()->put('lastbutton',1);

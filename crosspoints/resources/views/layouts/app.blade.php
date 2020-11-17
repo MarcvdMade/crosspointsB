@@ -102,7 +102,7 @@
                         </div>
 
                         <div class="layout-sitenav-block">
-                            <a href="{{route('meldentest')}}" class="layout-sitenav-links"><img src="{{asset('css/images/reportlogo.png')}}" alt="Report logo representing the report page" class="layout-sitenav-pic">
+                            <a href="{{route('meldentestinfo')}}" class="layout-sitenav-links"><img src="{{asset('css/images/reportlogo.png')}}" alt="Report logo representing the report page" class="layout-sitenav-pic">
                             Melden</a>
                         </div>
 

@@ -32,6 +32,6 @@ class VPController extends Controller
         $user->assignRole(2);
 
 
-        return redirect()->route('admin');
+        return redirect()->route('admin')->with('succes','Er is een niewe vertrouwenspersoon toegevoegd');
     }
 }
