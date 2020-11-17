@@ -25,6 +25,7 @@ Route::get('/testtrue')->name('testtrue');
 Route::get('/testfalse')->name('testfalse');
 Route::post('/checkscore','FormController@checkscore')->name('checkscore');
 Route::post('/goback','FormController@goback')->name('goback');
+
 //profile routes
 Route::patch('profiel/{user:name}', 'ProfilesController@update');
 Route::get('profiel/{user:name}', 'ProfilesController@show')->name('profile');
@@ -41,12 +42,12 @@ Route::middleware('can:is_admin')->group(function () {
 
     //toevoegen VP
     Route::get('admin/registerVP', 'VPController@index')->name('registerVP');
-    Route::post('admin', 'VPController@store')->name('registerVP');
+    Route::post('admin', 'VPController@store');
 
 
     //toevoegen bedrijf
     Route::get('/company','CompanyController@index')->name('company');
-    Route::post('/createcompany', '\App\Http\Controllers\CompanyController@store')->middleware('auth')->name('createcompany');
+    Route::post('/createcompany', '\App\Http\Controllers\CompanyController@store')->name('createcompany');
 
     //informatie pagina admin
     //create
