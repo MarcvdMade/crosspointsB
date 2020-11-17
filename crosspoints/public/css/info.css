@@ -95,3 +95,14 @@
     font-size: 21px;
 }
 
+.back_icon {
+    width: 60px;
+    display: flex;
+    margin: 0 0 0 200px;
+}
+
+.question_icon {
+    width: 35px;
+    height: 35px;
+    padding: 5px;
+}
