@@ -48,7 +48,7 @@
             </div>
         </form>
         <div>
-            <a href="{{route('info-show', $problem->id)}}">Annuleren</a>
+            <a href="{{route('problem')}}">Annuleren</a>
         </div>
     </div>
 

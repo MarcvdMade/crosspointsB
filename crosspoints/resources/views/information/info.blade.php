@@ -10,13 +10,9 @@
         @endif
 
         <div class="d-flex justify-content-center login-header info-header">
-            <h1>Informatie</h1>
+            <h1>Soorten ongewenst gedrag</h1>
         </div>
-        <div class="card-body d-flex justify-content-center login-body">
-            <button class="info-main-button"><a href="{{route('tip-create')}}" class="info-main-button-link">Voeg een tip toe.</a></button>
-            <button class="info-main-button"><a href="{{route('info-create')}}" class="info-main-button-link">Voeg een probleem toe.</a></button>
-            <button class="info-main-button"><a href="{{route('link-create')}}" class="info-main-button-link">Voeg een link toe.</a></button>
-        </div>
+
         <div class="container-fluid">
             <div class="row">
                 @foreach($problems as $problem)

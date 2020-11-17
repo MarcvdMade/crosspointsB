@@ -1,13 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
-    <div>
-        @if($message = Session::get('success'))
+    <img src="{{asset('css/images/backicon.png')}}" class="back_icon">
+    <div class="info-main-container container">
+    @if($message = Session::get('success'))
             <div class="alert alert-success mt-3 text-center">
                 <strong>{{$message}}</strong>
             </div>
         @endif
-        <h2>{{$problem->name}}</h2>
+        <div class="d-flex justify-content-center login-header info-header">
+            <h2>{{$problem->name}}</h2>
+            <img src="{{asset('css/images/questionicon.png')}}" class="question_icon">
+        </div>
+            <div class="card-body login-body">
         <p>{{$problem->description}}</p>
         <ul>
             @foreach($problem->tips as $tip)
@@ -20,18 +25,8 @@
             @endforeach
         </div>
         <div>
-            <a href="{{route('info-edit', $problem['id'])}}">Wijzig probleem</a>
-        </div>
-        <div>
             <a href="{{route('information')}}">Terug</a>
         </div>
-        <div>
-            <form method="POST" action="{{route('info-show', $problem['id'])}}">
-                @csrf
-                @method('DELETE')
-
-                <button type="submit">Verwijder probleem</button>
-            </form>
-        </div>
+            </div>
     </div>
 @endsection

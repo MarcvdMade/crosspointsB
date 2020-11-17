@@ -16,6 +16,7 @@
             <div class="d-flex justify-content-center">
                 <input type="submit" name="submit" id="submit" value="Voeg tip toe" class="info-main-button">
             </div>
+            <a href="{{route('problem')}}">Annuleren</a>
         </form>
     </div>
 @endsection

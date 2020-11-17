@@ -107,6 +107,10 @@
                         </div>
 
                         <div class="layout-sitenav-block">
+                            <a href="{{route('meld')}}" class="layout-sitenav-links"><i class="fa fa-edit" style="color: white" size="10px"></i></a>
+                        </div>
+
+                        <div class="layout-sitenav-block">
                             <a href="{{route('information')}}" class="layout-sitenav-links"><img src="{{asset('css/images/booklogo.png')}}" alt="Book logo representing the about page" class="layout-sitenav-pic">
                             Informatie</a>
                         </div>
@@ -118,9 +122,9 @@
             </div>
     </div>
     </header>
-    <main class="py-4">
-        @yield('content')
-    </main>
+        <main class="py-4">
+            @yield('content')
+        </main>
     </div>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
