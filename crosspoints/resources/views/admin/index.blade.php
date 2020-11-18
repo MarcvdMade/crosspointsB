@@ -2,13 +2,18 @@
 
 @section('content')
     <div class="container">
+        @if($message = Session::get('success'))
+            <div class="alert alert-success mt-3 text-center">
+                <strong>{{$message}}</strong>
+            </div>
+        @endif
         <div id="mySidenav" class="sidenav">
             <div class="sideNav-links">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <a href="{{route('problem')}}">Voeg Ongewenst Gedrag Toe</a>
             <a href="{{route('company')}}">Voeg Bedrijf toe</a>
             <a href="{{route('registerVP')}}">Registreer Vertrouwenspersoon</a>
-            <a href="">Registreer Administrator</a>
+            <a href="{{route('registerAdmin')}}">Registreer Administrator</a>
             <a href="">Bewerk Meldentest</a>
             </div>
         </div>
