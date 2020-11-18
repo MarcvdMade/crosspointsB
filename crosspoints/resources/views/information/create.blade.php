@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    <a href="{{route('problem')}}"><img src="{{asset('css/images/backicon.png')}}" class="back_icon"></a>
     <div class="container">
         <div class="">
             <h3 class="d-flex justify-content-center login-header info-header">Voeg Een Soort Ongewenst Gedrag Toe</h3>
@@ -73,9 +74,6 @@
                         <input type="submit" value="Voeg toe" class="info-create-button">
                     </div>
                 </form>
-                <div>
-                    <a href="{{route('problem')}}">Annuleren</a>
-                </div>
             </div>
         </div>
     </div>

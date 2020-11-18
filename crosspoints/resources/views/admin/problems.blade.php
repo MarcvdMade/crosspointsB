@@ -35,14 +35,14 @@
                         <td>{{$problem->summary}}</td>
                         <td>{{$problem->description}}</td>
                         <td>
-                            <a href="{{route('info-edit', $problem['id'])}}" class="btn btn-primary">Wijzig</a>
+                            <a href="{{route('info-edit', $problem['id'])}}" class="btn btn-success">Wijzig</a>
                         </td>
                         <td>
                             <form method="POST" action="{{route('info-show', $problem['id'])}}">
                                 @csrf
                                 @method('DELETE')
 
-                                <button type="submit" class="btn btn-success">Verwijder</button>
+                                <button type="submit" class="btn btn-danger">Verwijder</button>
                             </form>
                         </td>
                     </tr>

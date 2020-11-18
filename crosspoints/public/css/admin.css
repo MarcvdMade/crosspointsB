@@ -17,3 +17,18 @@
     -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
     transition: all 0.3s ease 0s;
 }
+
+.show-admin-img {
+    display: inline-block;
+    width: 50px;
+}
+
+.show-admin {
+    display: inline-block;
+    padding: 0 0 25px 25px;
+}
+
+.admin-show-btn {
+    display: block!important;
+    margin-top: 15px!important;
+}
