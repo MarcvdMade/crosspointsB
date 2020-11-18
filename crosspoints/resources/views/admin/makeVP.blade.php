@@ -69,6 +69,7 @@
                                 </div>
                             </div>
                         </form>
+                        <a href="{{route('admin')}}">Annuleren</a>
                     </div>
                 </div>
             </div>

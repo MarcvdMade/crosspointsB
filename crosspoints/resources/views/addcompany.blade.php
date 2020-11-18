@@ -20,6 +20,7 @@
                         </div>
                         <button type="submit" class="btn btn-primary ml-auto mr-auto">Voeg bedrijf toe</button>
                     </form>
+                    <a href="{{route('admin')}}">Annuleren</a>
                 </div>
             </div>
         </div>
