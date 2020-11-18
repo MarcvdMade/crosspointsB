@@ -1,15 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-
+    <a href="{{route('home')}}"><img src="{{asset('css/images/backicon.png')}}" class="back_icon"></a>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
                     <h3 class="d-flex justify-content-center login-header info-header">Melding maken</h3>
 
-                    <div class="card-body login-body">
-                        <form method="POST" action="{{route('meld.create')}}">
+                     <form method="POST" action="{{route('meld.create')}}">
                             @csrf
                             <div class="form-group">
                                 <label for="situation">Situatie:</label>
