@@ -1,12 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container-fluid">
+    <div class="container">
+        <div class="login-header card-header d-flex justify-content-center">
         <h2>Welkom, admin {{auth()->user()->name}}</h2>
-        <div class="links">
-            <a href="{{route('problem')}}"><button class="btn btn-primary">Voeg soorten ongewenst gedrag toe</button></a>
-            <a href="{{route('company')}}"><button class="btn btn-primary">Voeg bedrijven toe</button></a>
-            <a href="{{route('registerVP')}}"><button class="btn btn-primary">Registreer een nieuw vertrouwenspersoon</button></a>
+        </div>
+        <div class="login-body card-body d-flex justify-content-center">
+            <a href="{{route('problem')}}"><button class="admin-main-btn">Voeg ongewenst gedrag toe</button></a>
+            <a href="{{route('company')}}"><button class="admin-main-btn">Voeg Bedrijf toe</button></a>
+            <a href="{{route('registerVP')}}"><button class="admin-main-btn">Registreer Vertrouwenspersoon</button></a>
         </div>
     </div>
 @endsection

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <img src="{{asset('css/images/backicon.png')}}" class="back_icon">
+    <a href="{{route('information')}}"><img src="{{asset('css/images/backicon.png')}}" class="back_icon"></a>
     <div class="info-main-container container">
     @if($message = Session::get('success'))
             <div class="alert alert-success mt-3 text-center">
@@ -10,7 +10,6 @@
         @endif
         <div class="d-flex justify-content-center login-header info-header">
             <h2>{{$problem->name}}</h2>
-            <img src="{{asset('css/images/questionicon.png')}}" class="question_icon">
         </div>
             <div class="card-body login-body">
         <p>{{$problem->description}}</p>
@@ -20,12 +19,12 @@
             @endforeach
         </ul>
         <div>
+            <h4>Meer over dit onderwerp? Bekijk de onderstaande links:</h4>
+            <ol>
             @foreach($problem->links as $link)
-                <a href="{{$link->link}}">{{$link->label}}</a>
+                <li><a href="{{$link->link}}" class="links problem_links">{{$link->label}}</a></li>
             @endforeach
-        </div>
-        <div>
-            <a href="{{route('information')}}">Terug</a>
+            </ol>
         </div>
             </div>
     </div>
