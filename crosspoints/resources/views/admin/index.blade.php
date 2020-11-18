@@ -17,21 +17,31 @@
                 <h2>Welkom, admin {{auth()->user()->name}}</h2>
             </div>
             <div class="d-flex justify-content-center">
-                <button class="info-meerlezen-btn" onclick="openNav()">Open Menu</button>
+                <button id="menu-button" class="info-meerlezen-btn" onclick="openNav()">Open Menu</button>
             </div>
         </div>
     </div>
 @endsection
 
 <script>
+    let navOpen
     /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
     function openNav() {
-        if (window.innerWidth < 500) {
-            document.getElementById("mySidenav").style.width = "100%";
+        if (navOpen === true) {
+            navOpen = false
+            closeNav()
         } else {
-            document.getElementById("mySidenav").style.width = "250px";
-            document.getElementById("main").style.marginLeft = "250px";
+            navOpen = true
+
+            if (window.innerWidth < 500) {
+                document.getElementById("mySidenav").style.width = "100%";
+            } else {
+                document.getElementById("mySidenav").style.width = "250px";
+                document.getElementById("main").style.marginLeft = "250px";
+                document.getElementById("menu-button").innerHTML = "Close Menu";
+            }
         }
+
     }
 
     /* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
@@ -41,6 +51,7 @@
         } else {
             document.getElementById("mySidenav").style.width = "0";
             document.getElementById("main").style.marginLeft = "0";
+            document.getElementById("menu-button").innerHTML = "Open Menu";
         }
     }
 </script>
