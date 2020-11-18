@@ -12,10 +12,12 @@
             <a href="">Bewerk Meldentest</a>
             </div>
         </div>
-        <div>
-            <div class="login-header card-header d-flex">
-                <i class="fa fa-bars" onclick="openNav()" style="font-size: 30px; cursor: pointer"></i>
+        <div class="login-header card-header">
+            <div class="text-center">
                 <h2>Welkom, admin {{auth()->user()->name}}</h2>
+            </div>
+            <div class="d-flex justify-content-center">
+                <button class="info-meerlezen-btn" onclick="openNav()">Open Menu</button>
             </div>
         </div>
     </div>
