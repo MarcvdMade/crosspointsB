@@ -13,13 +13,14 @@
             <a href="{{route('problem')}}">Voeg Ongewenst Gedrag Toe</a>
             <a href="{{route('company')}}">Voeg Bedrijf toe</a>
             <a href="{{route('registerVP')}}">Registreer Vertrouwenspersoon</a>
-            <a href="{{route('registerAdmin')}}">Registreer Administrator</a>
+            <a href="{{route('admins')}}">Overzicht Administrators</a>
             <a href="">Bewerk Meldentest</a>
             </div>
         </div>
         <div class="login-header card-header">
             <div class="text-center">
                 <h2>Welkom, admin {{auth()->user()->name}}</h2>
+                <p>Via het menu kunt u naar belangrijke gegevens komen. Hier krijgt u deze overzien, aanpassen en verwijderen.</p>
             </div>
             <div class="d-flex justify-content-center">
                 <button id="menu-button" class="info-meerlezen-btn" onclick="openNav()">Open Menu</button>
@@ -42,7 +43,7 @@
             } else {
                 document.getElementById("mySidenav").style.width = "250px";
                 document.getElementById("main").style.marginLeft = "250px";
-                document.getElementById("menu-button").innerHTML = "Close Menu";
+                document.getElementById("menu-button").innerHTML = "Sluit Menu";
             }
         }
 

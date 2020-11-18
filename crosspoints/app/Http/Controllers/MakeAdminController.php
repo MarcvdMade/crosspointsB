@@ -9,7 +9,7 @@ class MakeAdminController extends Controller
 {
     protected function index(User $user){
         $this->authorize('is_admin', $user);
-        return view('admin.makeVP');
+        return view('admin.makeAdmin');
     }
 
     protected function store(User $user)
@@ -32,7 +32,7 @@ class MakeAdminController extends Controller
         $user->assignRole(1);
 
 
-        return redirect()->route('admin')
+        return redirect()->route('admins')
             ->with('success', 'Er is een nieuwe admin toegevoegd');
     }
 }
