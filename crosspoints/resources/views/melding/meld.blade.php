@@ -7,7 +7,7 @@
             <div class="col-md-8">
                 <div class="card">
                     <h3 class="d-flex justify-content-center login-header info-header">Melding maken</h3>
-
+                    <div class="login-body">
                      <form method="POST" action="{{route('meld.create')}}">
                             @csrf
                             <div class="form-group">
@@ -75,6 +75,7 @@
 
                             <button type="submit" class="btn btn-success" >Verzend</button>
                         </form>
+                    </div>
                     </div>
                 </div>
             </div>
