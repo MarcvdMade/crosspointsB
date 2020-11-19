@@ -12,7 +12,7 @@
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <a href="{{route('problem')}}">Voeg Ongewenst Gedrag Toe</a>
             <a href="{{route('company')}}">Voeg Bedrijf toe</a>
-            <a href="{{route('registerVP')}}">Registreer Vertrouwenspersoon</a>
+            <a href="{{route('counselors')}}">Overzicht Vertrouwenspersoon</a>
             <a href="{{route('admins')}}">Overzicht Administrators</a>
             <a href="">Bewerk Meldentest</a>
             </div>

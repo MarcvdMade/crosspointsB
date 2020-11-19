@@ -8,7 +8,7 @@
                     <div class="card-header login-header">Maak een vertrouwenspersoon aan</div>
 
                     <div class="card-body login-body">
-                        <form method="POST" action="{{ route('admin') }}">
+                        <form method="POST" action="{{ route('counselors') }}">
                             @csrf
 
                             <div class="form-group row">
@@ -69,7 +69,7 @@
                                 </div>
                             </div>
                         </form>
-                        <a href="{{route('admin')}}">Annuleren</a>
+                        <a href="{{route('counselors')}}">Annuleren</a>
                     </div>
                 </div>
             </div>

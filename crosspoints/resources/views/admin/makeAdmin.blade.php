@@ -8,7 +8,7 @@
                     <div class="card-header login-header">Maak een administrator account aan</div>
 
                     <div class="card-body login-body">
-                        <form method="POST" action="{{ route('admin') }}">
+                        <form method="POST" action="{{ route('admins') }}">
                             @csrf
 
                             <div class="form-group row">

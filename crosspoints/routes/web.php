@@ -42,17 +42,21 @@ Route::middleware('can:is_admin')->group(function () {
     Route::get('admin', 'AdminController@index')->name('admin');
     Route::get('admin/ongewenst-gedrag', 'AdminController@problem')->name('problem');
 
+    //overzicht VP
+    Route::get('admin/vertrouwenspersonen', 'OverviewVPController@index')->name('counselors');
+    Route::delete('admin/vertrouwenspersonen/{id}', 'OverviewVPController@destroy')->name('delete-counselor');
+
     //toevoegen VP
     Route::get('admin/registerVP', 'VPController@index')->name('registerVP');
-    Route::post('admin', 'VPController@store');
+    Route::post('admin/vertrouwenspersonen', 'VPController@store');
 
-//    overzicht admins
+    //overzicht admins
     Route::get('admin/admins', 'OverviewAdminController@index')->name('admins');
     Route::delete('admin/admins/{id}', 'OverviewAdminController@destroy')->name('delete-admin');
 
     //toevoegen Admin
     Route::get('admin/registerAdmin', 'MakeAdminController@index')->name('registerAdmin');
-    Route::post('admin', 'MakeAdminController@store');
+    Route::post('admin/admins', 'MakeAdminController@store');
 
 
     //toevoegen bedrijf
