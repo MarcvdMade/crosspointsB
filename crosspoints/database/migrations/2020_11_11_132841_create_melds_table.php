@@ -22,6 +22,13 @@ class CreateMeldsTable extends Migration
             $table->string('contact');
             $table->string('phone');
             $table->boolean('conditions');
+            $table->unsignedBigInteger('user_id');
+
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade');
+
             $table->timestamps();
         });
     }

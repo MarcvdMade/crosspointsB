@@ -34,7 +34,7 @@
                                 <label for="experience" class="d-flex justify-content-center info-link-label">Hoe heeft u deze situatie ervaren?</label>
                                 <p class="d-flex justify-content-center">0 = niet erg / 10 = zeer heftig</p>
                                 <div class="col-12 d-flex justify-content-center">
-                                <input type="range" class="form-control-range" id="myRange" min="0" max="10" value="5">
+                                <input type="range" name="experience" class="form-control-range" id="myRange" min="0" max="10" value="5">
                                 @error('experience')
                                     <p>{{$errors->first('experience')}}</p>
                                     @enderror
@@ -86,6 +86,11 @@
                                 @error('conditions')
                                 <p>{{$errors->first('conditions')}}</p>
                                 @enderror
+                                </div>
+                                <div>
+                                    <div>
+                                        <input type="hidden" name="user_id" id="user_id" value="{{Auth::user()->id}}">
+                                    </div>
                                 </div>
                             </div>
                             <div class="d-flex justify-content-center">

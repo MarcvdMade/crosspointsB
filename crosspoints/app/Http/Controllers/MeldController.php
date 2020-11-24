@@ -19,6 +19,7 @@ class MeldController extends Controller
 
     public function createMeld()
     {
+
         request()->validate([
             'situation' => 'required',
             'since' => 'required',
@@ -26,10 +27,12 @@ class MeldController extends Controller
             'counselor' => 'required',
             'contact' => 'required',
             'phone' => 'required',
-            'conditions' => 'required'
+            'conditions' => 'required',
+            'user_id' => 'required'
         ]);
 
         $meld = new Meld();
+
         $meld->situation = request('situation');
         $meld->since = request('since');
         $meld->experience = request('experience');
@@ -37,7 +40,10 @@ class MeldController extends Controller
         $meld->contact = request('contact');
         $meld->phone = request('phone');
         $meld->conditions = true;
+        $meld->user_id = request('user_id');
+
         $meld->save();
+
         return redirect('/home')->with('success','Het formulier is verzonden, binnen 2 dagen wordt er contact opgenomen');
     }
 
