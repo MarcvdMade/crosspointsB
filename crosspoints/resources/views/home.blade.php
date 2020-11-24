@@ -16,6 +16,8 @@
 
                     {{ __('You are logged in!') }}
                 </div>
+                <p>Vragen aanpassen/verwijderen/invoeren
+                    <a href="{{route('vragenlijst')}}"><button class="info-meerlezen-btn">Vragenlijst</button></a></p>
             </div>
             <div class="links"></div>
         </div>
