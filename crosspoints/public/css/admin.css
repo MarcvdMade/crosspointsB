@@ -32,3 +32,54 @@
     display: block!important;
     margin-top: 15px!important;
 }
+
+.open-sidenav-btn {
+    background-color: #83D8CA!important;
+    color: white!important;
+    font-weight: 400;
+    margin: 12px 8px;
+    border: none;
+    padding: 8px 12px;
+    text-transform: uppercase;
+    border-radius: 3px;
+    transition: all 0.3s ease 0s;
+}
+
+
+.open-sidenav-btn:hover {
+    color: white !important;
+    font-weight: 700 !important;
+    background-color: #83D8CA!important;
+    letter-spacing: 2px;
+    -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    transition: all 0.3s ease 0s;
+}
+
+
+/*Remove outlines when a button is selected*/
+
+.open-sidenav-btn:focus {
+    outline: none;
+    border: none;
+}
+
+
+.info-meerlezen-btn:focus {
+    outline: none;
+    border: none;
+}
+
+/*end section*/
+
+.sidenav-text {
+    opacity: .65;
+    transition: all 0.2s ease 0s;
+}
+
+.sidenav-text:hover {
+    opacity: 1;
+    background-color: #4dc0b5;
+}
+
+

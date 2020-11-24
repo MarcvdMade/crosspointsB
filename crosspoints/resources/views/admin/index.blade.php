@@ -10,11 +10,11 @@
         <div id="mySidenav" class="sidenav">
             <div class="sideNav-links">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="{{route('problem')}}">Voeg Ongewenst Gedrag Toe</a>
-            <a href="{{route('company')}}">Voeg Bedrijf toe</a>
-            <a href="{{route('registerVP')}}">Registreer Vertrouwenspersoon</a>
-            <a href="{{route('registerAdmin')}}">Registreer Administrator</a>
-            <a href="">Bewerk Meldentest</a>
+            <a href="{{route('problem')}}" class="sidenav-text">Voeg Ongewenst Gedrag Toe</a>
+            <a href="{{route('company')}}" class="sidenav-text">Voeg Bedrijf toe</a>
+            <a href="{{route('registerVP')}}" class="sidenav-text">Registreer Vertrouwenspersoon</a>
+            <a href="{{route('registerAdmin')}}" class="sidenav-text">Registreer Administrator</a>
+            <a href="" class="sidenav-text">Bewerk Meldentest</a>
             </div>
         </div>
         <div class="login-header card-header">
@@ -22,7 +22,7 @@
                 <h2>Welkom, admin {{auth()->user()->name}}</h2>
             </div>
             <div class="d-flex justify-content-center">
-                <button id="menu-button" class="info-meerlezen-btn" onclick="openNav()">Open Menu</button>
+                <button id="menu-button" class="open-sidenav-btn" onclick="openNav()">Open Menu</button>
             </div>
         </div>
     </div>
