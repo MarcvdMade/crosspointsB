@@ -37274,6 +37274,8 @@ module.exports = function(module) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+__webpack_require__(/*! ./navHandler */ "./resources/js/navHandler.js");
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -37318,6 +37320,56 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/navHandler.js":
+/*!************************************!*\
+  !*** ./resources/js/navHandler.js ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var btn = document.getElementById("menu-button");
+var closeBtn = document.getElementById("close-btn"); //check if button exists
+
+if (btn && closeBtn) {
+  btn.addEventListener("click", openNav);
+  closeBtn.addEventListener("click", closeNav);
+}
+
+var navOpen;
+/* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
+
+function openNav() {
+  if (navOpen === true) {
+    closeNav();
+  } else {
+    navOpen = true;
+
+    if (window.innerWidth < 500) {
+      document.getElementById("mySidenav").style.width = "100%";
+    } else {
+      document.getElementById("mySidenav").style.width = "250px";
+      document.getElementById("main").style.marginLeft = "250px";
+      document.getElementById("menu-button").innerHTML = "Sluit Menu";
+    }
+  }
+}
+/* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
+
+
+function closeNav() {
+  navOpen = false;
+
+  if (window.innerWidth < 500) {
+    document.getElementById("mySidenav").style.width = "0";
+  } else {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
+    document.getElementById("menu-button").innerHTML = "Open Menu";
+  }
+}
 
 /***/ }),
 

@@ -9,7 +9,7 @@
         @endif
         <div id="mySidenav" class="sidenav">
             <div class="sideNav-links">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="javascript:void(0)" id="close-btn" class="closebtn">&times;</a>
             <a href="{{route('problem')}}">Voeg Ongewenst Gedrag Toe</a>
             <a href="{{route('company')}}">Voeg Bedrijf toe</a>
             <a href="{{route('counselors')}}">Overzicht Vertrouwenspersoon</a>
@@ -23,42 +23,8 @@
                 <p>Via het menu kunt u naar belangrijke gegevens komen. Hier krijgt u deze overzien, aanpassen en verwijderen.</p>
             </div>
             <div class="d-flex justify-content-center">
-                <button id="menu-button" class="info-meerlezen-btn" onclick="openNav()">Open Menu</button>
+                <button id="menu-button" class="info-meerlezen-btn">Open Menu</button>
             </div>
         </div>
     </div>
 @endsection
-
-<script>
-    let navOpen
-    /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
-    function openNav() {
-        if (navOpen === true) {
-            closeNav()
-        } else {
-            navOpen = true
-
-            if (window.innerWidth < 500) {
-                document.getElementById("mySidenav").style.width = "100%";
-            } else {
-                document.getElementById("mySidenav").style.width = "250px";
-                document.getElementById("main").style.marginLeft = "250px";
-                document.getElementById("menu-button").innerHTML = "Sluit Menu";
-            }
-        }
-
-    }
-
-    /* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
-    function closeNav() {
-        navOpen = false
-
-        if (window.innerWidth < 500) {
-            document.getElementById("mySidenav").style.width = "0";
-        } else {
-            document.getElementById("mySidenav").style.width = "0";
-            document.getElementById("main").style.marginLeft = "0";
-            document.getElementById("menu-button").innerHTML = "Open Menu";
-        }
-    }
-</script>
