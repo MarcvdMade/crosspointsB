@@ -2,38 +2,8 @@
 
 @section('content')
     <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            background-color: #f1f1f1;
-        }
-
-        #regForm {
-            background-color: #ffffff;
-            margin: 100px auto;
-            font-family: Raleway;
-            padding: 40px;
-            width: 70%;
-            min-width: 300px;
-        }
-
         h1 {
             text-align: center;
-        }
-
-        input {
-            padding: 10px;
-            width: 100%;
-            font-size: 17px;
-            font-family: Raleway;
-            border: 1px solid #aaaaaa;
-        }
-
-        /* Mark input boxes that gets an error on validation: */
-        input.invalid {
-            background-color: #ffdddd;
         }
 
         /* Hide all steps by default: */
@@ -64,11 +34,11 @@
             height: 15px;
             width: 15px;
             margin: 0 2px;
-            background-color: #bbbbbb;
+            background-color: #60D2C0;
             border: none;
             border-radius: 50%;
             display: inline-block;
-            opacity: 0.5;
+            opacity: 1;
         }
 
         .step.active {
@@ -77,36 +47,73 @@
 
         /* Mark the steps that are finished and valid: */
         .step.finish {
-            background-color: #4CAF50;
+            background-color: #0D7377;
         }
     </style>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <form id="regForm" action="/action_page.php">
-                    <h1>Register:</h1>
-                    <!-- One "tab" for each step in the form: -->
-                    <div class="tab">Name:
-                        <p><input placeholder="First name..." oninput="this.className = ''" name="fname"></p>
-                        <p><input placeholder="Last name..." oninput="this.className = ''" name="lname"></p>
+                <form id="regForm" action="">
+                    <div class="tab h2 text-center">Was er geweld?
+                        <div class="col align-content-center">
+                            <div class="row align-content-center">
+                                <div class=""><button type="button" onclick="onclickbuttonhandler(1)" name="vraag1-ja" class="melden-yesno-button">ja</button></div>
+                                <div class=""><button type="button" onclick="onclickbuttonhandler(2)" name="vraag1-nee" class="melden-yesno-button">nee</button></div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="tab">Contact Info:
-                        <p><input placeholder="E-mail..." oninput="this.className = ''" name="email"></p>
-                        <p><input placeholder="Phone..." oninput="this.className = ''" name="phone"></p>
+                    <div class="tab h2 text-center">Ben je boos?
+                        <div class="col align-content-center">
+                            <div class="row align-content-center">
+                                <div class=""><button type="button" onclick="onclickbuttonhandler(1)" name="vraag1-ja" class="melden-yesno-button">ja</button></div>
+                                <div class=""><button type="button" onclick="onclickbuttonhandler(2)" name="vraag1-nee" class="melden-yesno-button">nee</button></div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="tab">Birthday:
-                        <p><input placeholder="dd" oninput="this.className = ''" name="dd"></p>
-                        <p><input placeholder="mm" oninput="this.className = ''" name="nn"></p>
-                        <p><input placeholder="yyyy" oninput="this.className = ''" name="yyyy"></p>
+                    <div class="tab h2 text-center">Ben je boos?
+                        <div class="col align-content-center">
+                            <div class="row align-content-center">
+                                <div class=""><button type="button" onclick="onclickbuttonhandler(1)" name="vraag1-ja" class="melden-yesno-button">ja</button></div>
+                                <div class=""><button type="button" onclick="onclickbuttonhandler(2)" name="vraag1-nee" class="melden-yesno-button">nee</button></div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="tab">Login Info:
-                        <p><input placeholder="Username..." oninput="this.className = ''" name="uname"></p>
-                        <p><input placeholder="Password..." oninput="this.className = ''" name="pword" type="password"></p>
+                    <div class="tab h2 text-center">Ben je boos?
+                        <div class="col align-content-center">
+                            <div class="row align-content-center">
+                                <div class=""><button type="button" onclick="onclickbuttonhandler(1)" name="vraag1-ja" class="melden-yesno-button">ja</button></div>
+                                <div class=""><button type="button" onclick="onclickbuttonhandler(2)" name="vraag1-nee" class="melden-yesno-button">nee</button></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab h2 text-center">Ben je boos?
+                        <div class="col align-content-center">
+                            <div class="row align-content-center">
+                                <div class=""><button type="button" onclick="onclickbuttonhandler(1)" name="vraag1-ja" class="melden-yesno-button">ja</button></div>
+                                <div class=""><button type="button" onclick="onclickbuttonhandler(2)" name="vraag1-nee" class="melden-yesno-button">nee</button></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab h2 text-center">Ben je boos?
+                        <div class="col align-content-center">
+                            <div class="row align-content-center">
+                                <div class=""><button type="button" onclick="onclickbuttonhandler(1)" name="vraag1-ja" class="melden-yesno-button">ja</button></div>
+                                <div class=""><button type="button" onclick="onclickbuttonhandler(2)" name="vraag1-nee" class="melden-yesno-button">nee</button></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab h2 text-center">Ben je boos?
+                        <div class="col align-content-center">
+                            <div class="row align-content-center">
+                                <div class=""><button type="button" onclick="onclickbuttonhandler(1)" name="vraag1-ja" class="melden-yesno-button">ja</button></div>
+                                <div class=""><button type="button" onclick="onclickbuttonhandler(2)" name="vraag1-nee" class="melden-yesno-button">nee</button></div>
+                            </div>
+                        </div>
                     </div>
                     <div style="overflow:auto;">
                         <div style="float:right;">
-                            <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                            <button type="button" id="prevBtn" onclick="conclickprevhandler()">Previous</button>
                             <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
                         </div>
                     </div>
@@ -116,10 +123,14 @@
                         <span class="step"></span>
                         <span class="step"></span>
                         <span class="step"></span>
+                        <span class="step"></span>
+                        <span class="step"></span>
+                        <span class="step"></span>
                     </div>
                 </form>
                 <script>
                     var currentTab = 0; // Current tab is set to be the first tab (0)
+                    var awnsers =[];
                     showTab(currentTab); // Display the current tab
 
                     function showTab(n) {
@@ -159,7 +170,10 @@
                         // Otherwise, display the correct tab:
                         showTab(currentTab);
                     }
-
+                    function addAwnser(x){
+                        awnsers.push(x);
+                        console.log(awnsers);
+                    }
                     function validateForm() {
                         // This function deals with validation of the form fields
                         var x, y, i, valid = true;
@@ -190,6 +204,15 @@
                         }
                         //... and adds the "active" class on the current step:
                         x[n].className += " active";
+                    }
+                    function onclickbuttonhandler(x) {
+                        addAwnser(x);
+                        nextPrev(1);
+                    }
+                    function conclickprevhandler(){
+                        awnsers.pop();
+                        nextPrev(-1);
+                        console.log(awnsers);
                     }
                 </script>
 
