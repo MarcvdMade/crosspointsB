@@ -95,3 +95,61 @@
     font-size: 21px;
 }
 
+.back_icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    margin: 0 0 0 250px;
+
+    -webkit-transition: width 0.3s,height 0.3s;
+
+
+}
+
+.back_icon:hover {
+    width: 62px;
+    height: 62px;
+    transform: rotate(360deg);
+    transition: all 0.3s ease 0s;
+}
+
+@media only screen and (max-width: 1300px) {
+    .back_icon {
+        margin: 0 auto 20px auto;
+    }
+}
+
+.problem_links{
+    text-decoration: none;
+    color: white;
+
+    -webkit-transition: font-size 0.3s;
+}
+
+.problem_links:hover{
+    text-decoration: underline;
+    color: darkgreen;
+    font-size: 110%;
+    transition: all 0.3s ease 0s;
+}
+
+.info-meerlezen-btn {
+    background-color: #0D7377!important;
+    color: white!important;
+    margin: 8px 4px;
+    border: none;
+    padding: 4px;
+    text-transform: uppercase;
+    border-radius: 3px;
+    transition: all 0.3s ease 0s;
+}
+
+.info-meerlezen-btn:hover {
+    color: white !important;
+    font-weight: 700 !important;
+    background-color: #83D8CA!important;
+    letter-spacing: 2px;
+    -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    transition: all 0.3s ease 0s;
+}

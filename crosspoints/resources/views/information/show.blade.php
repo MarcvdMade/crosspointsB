@@ -1,13 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
-    <div>
-        @if($message = Session::get('success'))
+    <a href="{{route('information')}}"><img src="{{asset('css/images/backicon.png')}}" class="back_icon"></a>
+    <div class="info-main-container container">
+    @if($message = Session::get('success'))
             <div class="alert alert-success mt-3 text-center">
                 <strong>{{$message}}</strong>
             </div>
         @endif
-        <h2>{{$problem->name}}</h2>
+        <div class="d-flex justify-content-center login-header info-header">
+            <h2>{{$problem->name}}</h2>
+        </div>
+            <div class="card-body login-body">
         <p>{{$problem->description}}</p>
         <ul>
             @foreach($problem->tips as $tip)
@@ -15,23 +19,13 @@
             @endforeach
         </ul>
         <div>
+            <h4>Meer over dit onderwerp? Bekijk de onderstaande links:</h4>
+            <ol>
             @foreach($problem->links as $link)
-                <a href="{{$link->link}}">{{$link->label}}</a>
+                <li><a href="{{$link->link}}" class="links problem_links">{{$link->label}}</a></li>
             @endforeach
+            </ol>
         </div>
-        <div>
-            <a href="{{route('info-edit', $problem['id'])}}">Wijzig probleem</a>
-        </div>
-        <div>
-            <a href="{{route('information')}}">Terug</a>
-        </div>
-        <div>
-            <form method="POST" action="{{route('info-show', $problem['id'])}}">
-                @csrf
-                @method('DELETE')
-
-                <button type="submit">Verwijder probleem</button>
-            </form>
-        </div>
+            </div>
     </div>
 @endsection

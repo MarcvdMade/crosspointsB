@@ -10,7 +10,7 @@
     <title>Team Crosspoints B</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -24,17 +24,16 @@
     <link rel="stylesheet" href="{{asset("css/login-style.css")}}">
     <link rel="stylesheet" href="{{asset("css/info.css")}}">
     <link rel="stylesheet" href="{{asset("css/melden.css")}}">
+    <link rel="stylesheet" href="{{asset("css/admin.css")}}">
 
     <!-- Styles -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
     <link rel="stylesheet" href="{{asset("css/app.css")}}">
 
-
-
 </head>
 
-<body>
+<body id="main">
     <header>
     <div id="">
         <nav class="navbar navbar-expand-md navbar-light shadow-sm layout-navbar">
@@ -72,10 +71,17 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{route('profile', auth()->user())}}">Profiel</a>
+                                    @can('is_admin')
+                                        <a class="dropdown-item" href="{{route('admin')}}">Admin pagina</a>
+                                    @endcan
+                                    @can('is_counselor')
+                                        <a class="dropdown-item" href="{{route('vertrouwenspersoon')}}">Vertrouwenspersoon pagina</a>
+                                    @endcan
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('Uitloggen') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -96,12 +102,17 @@
 
                         <div class="layout-sitenav-block">
                             <a href="{{route('meldentest')}}" class="layout-sitenav-links"><img src="{{asset('css/images/reportlogo.png')}}" alt="Report logo representing the report page" class="layout-sitenav-pic">
+                            Test</a>
+                        </div>
+
+                        <div class="layout-sitenav-block">
+                            <a href="{{route('meld')}}" class="layout-sitenav-links"><img src="{{asset('css/images/megaphonelogo.png')}}" alt="Report logo representing the report page" class="layout-sitenav-pic">
                             Melden</a>
                         </div>
 
                         <div class="layout-sitenav-block">
                             <a href="{{route('information')}}" class="layout-sitenav-links"><img src="{{asset('css/images/booklogo.png')}}" alt="Book logo representing the about page" class="layout-sitenav-pic">
-                            Informatie</a>
+                            Info</a>
                         </div>
 
                         <div class="layout-sitenav-block">
@@ -109,18 +120,14 @@
                             Contact</a></button>
                         </div>
             </div>
-
-
     </div>
     </header>
-    <main class="py-4">
-        @yield('content')
-    </main>
+        <main class="py-4">
+            @yield('content')
+        </main>
     </div>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
-
+    <script src="{{asset('js/app.js')}}"></script>
+{{--    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>--}}
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 </body>

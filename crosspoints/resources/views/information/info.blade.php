@@ -10,13 +10,9 @@
         @endif
 
         <div class="d-flex justify-content-center login-header info-header">
-            <h1>Informatie</h1>
+            <h1>Soorten ongewenst gedrag</h1>
         </div>
-        <div class="card-body d-flex justify-content-center login-body">
-            <button class="info-main-button"><a href="{{route('tip-create')}}" class="info-main-button-link">Voeg een tip toe.</a></button>
-            <button class="info-main-button"><a href="{{route('info-create')}}" class="info-main-button-link">Voeg een probleem toe.</a></button>
-            <button class="info-main-button"><a href="{{route('link-create')}}" class="info-main-button-link">Voeg een link toe.</a></button>
-        </div>
+
         <div class="container-fluid">
             <div class="row">
                 @foreach($problems as $problem)
@@ -32,12 +28,17 @@
                                 @endforeach
                             </ul>
                             <div>
+                                <h5>Artikelen over het onderwerp:</h5>
+                                <ol>
                                 @foreach($problem->links as $link)
-                                    <a href="{{$link->link}}">{{$link->label}}</a>
+                                    <li>
+                                    <a href="{{$link->link}}" class="problem_links">{{$link->label}}</a>
+                                    </li>
                                 @endforeach
+                                </ol>
                             </div>
                             <div>
-                                <a href="{{route('info-show', $problem['id'])}}">Meer lezen</a>
+                                <a href="{{route('info-show', $problem['id'])}}"><button class="info-meerlezen-btn">Meer lezen</button></a>
                             </div>
                         </div>
                     </div>

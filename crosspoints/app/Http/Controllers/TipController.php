@@ -3,17 +3,22 @@
 namespace App\Http\Controllers;
 
 use App\Tip;
+use App\User;
 use Illuminate\Http\Request;
 
 class TipController extends Controller
 {
-    public function create()
+    public function create(User $user)
     {
+        $this->authorize('is_admin', $user);
+
         return view('information.tip');
     }
 
-    public function store()
+    public function store(User $user)
     {
+        $this->authorize('is_admin', $user);
+
         request()->validate([
             'tip' => 'required',
         ]);
@@ -24,7 +29,7 @@ class TipController extends Controller
 
         $tip->save();
 
-        return redirect('information')
+        return redirect()->route('problem')
             ->with('success', 'You successfully added a new tip!');
     }
 }
