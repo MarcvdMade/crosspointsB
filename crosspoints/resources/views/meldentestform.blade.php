@@ -58,56 +58,56 @@
                     <div class="tab h2 text-center">Was er geweld?
                         <div class="col align-content-center">
                             <div class="row align-content-center">
-                                <div class=""><button type="button" onclick="onclickbuttonhandler(1)" name="vraag1-ja" class="melden-yesno-button">ja</button></div>
-                                <div class=""><button type="button" onclick="onclickbuttonhandler(2)" name="vraag1-nee" class="melden-yesno-button">nee</button></div>
+                                <div class=""><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
+                                <div class=""><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
                             </div>
                         </div>
                     </div>
                     <div class="tab h2 text-center">Ben je boos?
                         <div class="col align-content-center">
                             <div class="row align-content-center">
-                                <div class=""><button type="button" onclick="onclickbuttonhandler(1)" name="vraag1-ja" class="melden-yesno-button">ja</button></div>
-                                <div class=""><button type="button" onclick="onclickbuttonhandler(2)" name="vraag1-nee" class="melden-yesno-button">nee</button></div>
+                                <div class=""><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
+                                <div class=""><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
                             </div>
                         </div>
                     </div>
                     <div class="tab h2 text-center">Ben je boos?
                         <div class="col align-content-center">
                             <div class="row align-content-center">
-                                <div class=""><button type="button" onclick="onclickbuttonhandler(1)" name="vraag1-ja" class="melden-yesno-button">ja</button></div>
-                                <div class=""><button type="button" onclick="onclickbuttonhandler(2)" name="vraag1-nee" class="melden-yesno-button">nee</button></div>
+                                <div class=""><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
+                                <div class=""><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
                             </div>
                         </div>
                     </div>
                     <div class="tab h2 text-center">Ben je boos?
                         <div class="col align-content-center">
                             <div class="row align-content-center">
-                                <div class=""><button type="button" onclick="onclickbuttonhandler(1)" name="vraag1-ja" class="melden-yesno-button">ja</button></div>
-                                <div class=""><button type="button" onclick="onclickbuttonhandler(2)" name="vraag1-nee" class="melden-yesno-button">nee</button></div>
+                                <div class=""><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
+                                <div class=""><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
                             </div>
                         </div>
                     </div>
                     <div class="tab h2 text-center">Ben je boos?
                         <div class="col align-content-center">
                             <div class="row align-content-center">
-                                <div class=""><button type="button" onclick="onclickbuttonhandler(1)" name="vraag1-ja" class="melden-yesno-button">ja</button></div>
-                                <div class=""><button type="button" onclick="onclickbuttonhandler(2)" name="vraag1-nee" class="melden-yesno-button">nee</button></div>
+                                <div class=""><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
+                                <div class=""><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
                             </div>
                         </div>
                     </div>
                     <div class="tab h2 text-center">Ben je boos?
                         <div class="col align-content-center">
                             <div class="row align-content-center">
-                                <div class=""><button type="button" onclick="onclickbuttonhandler(1)" name="vraag1-ja" class="melden-yesno-button">ja</button></div>
-                                <div class=""><button type="button" onclick="onclickbuttonhandler(2)" name="vraag1-nee" class="melden-yesno-button">nee</button></div>
+                                <div class=""><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
+                                <div class=""><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
                             </div>
                         </div>
                     </div>
                     <div class="tab h2 text-center">Ben je boos?
                         <div class="col align-content-center">
                             <div class="row align-content-center">
-                                <div class=""><button type="button" onclick="onclickbuttonhandler(1)" name="vraag1-ja" class="melden-yesno-button">ja</button></div>
-                                <div class=""><button type="button" onclick="onclickbuttonhandler(2)" name="vraag1-nee" class="melden-yesno-button">nee</button></div>
+                                <div class=""><button type="button" id="vraag-ja" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
+                                <div class=""><button type="button" id="vraag-nee" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
                             </div>
                         </div>
                     </div>
@@ -144,7 +144,16 @@
                             document.getElementById("prevBtn").style.display = "inline";
                         }
                         if (n == (x.length - 1)) {
-                            document.getElementById("nextBtn").innerHTML = "Submit";
+                            document.getElementById("vraag-ja").onclick = function (){
+                                redirectnext()
+                            }
+                            document.getElementById("vraag-nee").onclick = function (){
+                                location.href = "meldentestopen";
+                            }
+                            document.getElementById("nextBtn").innerHTML = "Next step";
+                            document.getElementById("nextBtn").onclick = function () {
+                                location.href = "{{ route('meldentestopen') }}";
+                            };
                         } else {
                             document.getElementById("nextBtn").innerHTML = "Next";
                         }
@@ -214,6 +223,11 @@
                         nextPrev(-1);
                         console.log(awnsers);
                     }
+                    function redirectnext(){
+                        onclickbuttonhandler(1)
+                        location.href = "{{ route('meldentestopen') }}";
+                    }
+
                 </script>
 
             </div>
