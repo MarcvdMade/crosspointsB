@@ -5,10 +5,10 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header login-header">Maak een vertrouwenspersoon aan</div>
+                    <div class="card-header login-header">Maak een administrator account aan</div>
 
                     <div class="card-body login-body">
-                        <form method="POST" action="{{ route('counselors') }}">
+                        <form method="POST" action="{{ route('admins') }}">
                             @csrf
 
                             <div class="form-group row">
@@ -69,7 +69,7 @@
                                 </div>
                             </div>
                         </form>
-                        <a href="{{route('counselors')}}">Annuleren</a>
+                        <a href="{{route('admins')}}">Annuleren</a>
                     </div>
                 </div>
             </div>

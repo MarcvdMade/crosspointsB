@@ -37,18 +37,35 @@ Route::get('profiel/{user:name}/wijzig', 'ProfilesController@edit')->name('edit-
 Route::get('melding/meld', 'MeldController@index')->name('meld');
 Route::post('create-post', 'MeldController@createMeld')->name('meld.create');
 
+//vragenlijst
+Route::patch('vragenlijst', 'VraagController@updateVraag');
+Route::get('vragenlijst', 'VragenlijstController@index')->name('vragenlijst');
+Route::get('vraag', 'VraagController@index')->name('vraag');
+Route::post('create-vraag', 'VraagController@createVraag')->name('vraag.create');
+Route::get('vragenlijst', 'VraagController@GetVraag')->name('vragenlijst');
+Route::get('delete-vraag/{id}', 'VraagController@deleteVraag');
+Route::get('edit-vraag/{id}', 'VraagController@editVraag')->name('edit-vraag');
+
 //admin routes
 Route::middleware('can:is_admin')->group(function () {
     Route::get('admin', 'AdminController@index')->name('admin');
     Route::get('admin/ongewenst-gedrag', 'AdminController@problem')->name('problem');
 
+    //overzicht VP
+    Route::get('admin/vertrouwenspersonen', 'OverviewVPController@index')->name('counselors');
+    Route::delete('admin/vertrouwenspersonen/{id}', 'OverviewVPController@destroy')->name('delete-counselor');
+
     //toevoegen VP
     Route::get('admin/registerVP', 'VPController@index')->name('registerVP');
-    Route::post('admin', 'VPController@store');
+    Route::post('admin/vertrouwenspersonen', 'VPController@store');
+
+    //overzicht admins
+    Route::get('admin/admins', 'OverviewAdminController@index')->name('admins');
+    Route::delete('admin/admins/{id}', 'OverviewAdminController@destroy')->name('delete-admin');
 
     //toevoegen Admin
     Route::get('admin/registerAdmin', 'MakeAdminController@index')->name('registerAdmin');
-    Route::post('admin', 'MakeAdminController@store');
+    Route::post('admin/admins', 'MakeAdminController@store');
 
 
     //toevoegen bedrijf
@@ -82,4 +99,6 @@ Route::middleware('can:is_admin')->group(function () {
 Route::middleware('can:is_counselor')->group(function () {
     Route::get('vertrouwenspersoon', 'CounselorController@index')->name('vertrouwenspersoon');
 });
+
+
 

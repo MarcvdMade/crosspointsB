@@ -4,7 +4,7 @@
     <div class="container">
         <h2 class="d-flex justify-content-center login-header info-header">Profiel van {{$user->name}}</h2>
         <div class="card-body login-body">
-        <h4>Rechten die u heeft:</h4>
+            <h4>Rechten die u heeft:</h4>
             @can('is_admin')
                 <div class="card-body login-body">
                     <img src="{{asset('css/images/adminlogo.png')}}" alt="Logo van een admin" class="show-admin-img">
@@ -20,18 +20,17 @@
                     <button class="btn btn-dark admin-show-btn"><a class="text-decoration-none text-white" href="{{route('vertrouwenspersoon')}}">Vertrouwenspersoon Pagina</a></button>
                 </div>
             @endcan
-        <p>U kunt hier uw gegevens wijzigen</p>
-        @if($message = Session::get('success'))
+            <p>U kunt hier uw gegevens wijzigen</p>
+            @if($message = Session::get('success'))
             <div class="alert alert-success mt-3 text-center">
                 <strong>{{$message}}</strong>
             </div>
-        @endif
-        @can('myProfile', $user)
+            @endif
+            @can('myProfile', $user)
             <div>
                 <a href="{{$user->path('wijzig')}}"><button class="info-meerlezen-btn">Wijzig gegevens</button></a>
             </div>
-        @endcan
+            @endcan
         </div>
-    </div>
     </div>
 @endsection

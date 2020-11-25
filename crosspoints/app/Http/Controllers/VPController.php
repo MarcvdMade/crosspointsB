@@ -32,7 +32,7 @@ class VPController extends Controller
         $user->assignRole(2);
 
 
-        return redirect()->route('admin')
+        return redirect()->route('counselors')
             ->with('success', 'Er is een nieuwe vertrouwenspersoon toegevoegd');
     }
 }

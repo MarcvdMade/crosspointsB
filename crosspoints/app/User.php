@@ -65,6 +65,12 @@ class User extends Authenticatable
         return $this->roles->map->abilities->flatten()->pluck('name')->unique();
     }
 
+//    checks the melds table in the database for reports
+    public function report()
+    {
+        return $this->hasMany(Meld::class);
+    }
+
     //path to profile
     public function path($append = '')
     {
