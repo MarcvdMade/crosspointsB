@@ -42,6 +42,11 @@ class User extends Authenticatable
         return $this->belongsToMany(Role::class)->withTimestamps();
     }
 
+    public function companies()
+    {
+        return $this->belongsToMany(Company::class);
+    }
+
     public function assignRole($role)
     {
         $this->roles()->sync($role, false);
@@ -64,6 +69,7 @@ class User extends Authenticatable
     {
         return $this->roles->map->abilities->flatten()->pluck('name')->unique();
     }
+
 
 //    checks the melds table in the database for reports
     public function report()
