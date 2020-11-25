@@ -10,6 +10,7 @@
         <div id="mySidenav" class="sidenav">
             <div class="sideNav-links">
                 <a href="javascript:void(0)" id="close-btn" class="closebtn">&times;</a>
+                <a href="{{route('vragenlijst')}}">Bekijk vragenlijst voor het meldentest</a>
             </div>
         </div>
         <div class="login-header card-header">
