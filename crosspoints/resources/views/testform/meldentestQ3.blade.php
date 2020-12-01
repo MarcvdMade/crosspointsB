@@ -8,10 +8,10 @@
                 <h3 class="d-flex justify-content-center login-header info-header">"Moet ik me melden?" Test</h3>
 
                 <div class="card-body login-body">
-                    <h2 class="text-center">Vraag {{$question}}</h2>
+                    <h2 class="text-center">Heeft u concentratieproblemen na aanleiding van gebeurtenissen op de werkvloer?</h2>
                     <h2 class="text-center">Score {{$test}}</h2>
 
-                            <form action="{{route('checkscore')}}" method="POST">
+                            <form action="{{route('vragenlijst')}}" method="POST">
                                 @csrf
                                 <div class="container">
                                     <div class="row justify-content-center">
