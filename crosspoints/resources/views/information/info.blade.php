@@ -28,12 +28,17 @@
                                 @endforeach
                             </ul>
                             <div>
+                                <h5>Artikelen over het onderwerp:</h5>
+                                <ol>
                                 @foreach($problem->links as $link)
-                                    <a href="{{$link->link}}">{{$link->label}}</a>
+                                    <li>
+                                    <a href="{{$link->link}}" class="problem_links">{{$link->label}}</a>
+                                    </li>
                                 @endforeach
+                                </ol>
                             </div>
                             <div>
-                                <a href="{{route('info-show', $problem['id'])}}">Meer lezen</a>
+                                <a href="{{route('info-show', $problem['id'])}}"><button class="info-meerlezen-btn">Meer lezen</button></a>
                             </div>
                         </div>
                     </div>

@@ -1,9 +1,10 @@
 .melden-yesno-button {
     background-color: #0D7377!important;
+    font-size: 150%;
     color: white!important;
     margin: 32px 32px;
     border: none;
-    padding: 21px 48px;
+    padding: 16px 42px;
     text-transform: uppercase;
     border-radius: 6px;
     transition: all 0.3s ease 0s;
@@ -60,6 +61,9 @@ button:hover {
 }
 
 
+#ex1Slider .slider-selection {
+    background: #BABABA;
+}
 /* Make circles that indicate the steps of the form: */
 .step {
     height: 15px;

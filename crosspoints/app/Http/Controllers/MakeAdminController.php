@@ -5,11 +5,11 @@ use App\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
 
-class VPController extends Controller
+class MakeAdminController extends Controller
 {
     protected function index(User $user){
         $this->authorize('is_admin', $user);
-        return view('admin.makeVP');
+        return view('admin.makeAdmin');
     }
 
     protected function store(User $user)
@@ -29,10 +29,10 @@ class VPController extends Controller
         $user->password = Hash::make(request('password'));
 
         $user->save();
-        $user->assignRole(2);
+        $user->assignRole(1);
 
 
-        return redirect()->route('counselors')
-            ->with('success', 'Er is een nieuwe vertrouwenspersoon toegevoegd');
+        return redirect()->route('admins')
+            ->with('success', 'Er is een nieuwe admin toegevoegd');
     }
 }
