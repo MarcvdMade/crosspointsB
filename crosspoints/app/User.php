@@ -47,6 +47,10 @@ class User extends Authenticatable
         return $this->belongsToMany(Company::class);
     }
 
+    public function assignCompany($company) {
+        $this->companies()->sync($company, false);
+    }
+
     public function assignRole($role)
     {
         $this->roles()->sync($role, false);
