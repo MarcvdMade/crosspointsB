@@ -42,7 +42,7 @@
                     </div>
                     <div class="card-body login-body">
                         <p>Doe dan nu de test</p>
-                        <a href="{{route('meldentest')}}">
+                        <a href="{{route('meldentestinfo')}}">
                             <button class="btn btn-primary info-meerlezen-btn"> Klik hier</button>
                         </a>
                     </div>
