@@ -13,7 +13,6 @@ class FormController extends Controller
     {
         $this->middleware('auth');
     }
-
     public function index(){
         $user=Auth::user();
         session()->forget('testscore');
@@ -24,15 +23,28 @@ class FormController extends Controller
         session()->put('answers', []);
         return view('meldentest', ['user'=>$user]);
     }
+    public function indexinfo(){
+        return view('meldentestinfo');
+    }
+    public function indexform(){
+    return view('meldentestform');
+}
+    public function indexopen(){
+        return view('meldentestopen');
+    }
 
     public function checkscore(){
+        $ongewenstgedrag = ['Pesten', 'Agressie', 'Discriminatie', 'Seksuele intimidate', 'Spanning op de werkvloek', 'Machtsmisbruik', 'Constante kritiek'];
         $answer = request('button');
         $test = session()->get('testscore');
         $question = session()->get('question');
-        $answers = session()->get('answers');
 
-        if($question == 4){
-            abort(403, "Seems like the next few questions have not been set yet - (ʘᗩʘ’) ");
+        if($question == 6){
+            if($test <4){
+                return view('testfalse');
+            }else{
+                return view('testtrue');
+            }
         }
         if($answer == 1) {
             session()->put('lastbutton',1);
@@ -44,7 +56,7 @@ class FormController extends Controller
             session()->put('question',$questionupdate);
             session()->push('answers', 1);
 
-            return view('/testform/meldentestQ'.$questionupdate, ['test'=>$testupdate], ['question'=>$questionupdate]);
+            return view('/testform/meldentestQ'.$questionupdate, ['test'=>$testupdate, 'ongewenstgedrag'=>$ongewenstgedrag, 'question'=>$questionupdate]);
         }else{
             session()->put('lastbutton',0);
 
@@ -52,7 +64,7 @@ class FormController extends Controller
             session()->push('answers', 0);
 
             session()->put('question',$questionupdate);
-            return view('/testform/meldentestQ'.$questionupdate, ['test'=>$test], ['question'=>$questionupdate]);
+            return view('/testform/meldentestQ'.$questionupdate, ['test'=>$test, 'ongewenstgedrag'=>$ongewenstgedrag, 'question'=>$questionupdate]);
         }
     }
 
