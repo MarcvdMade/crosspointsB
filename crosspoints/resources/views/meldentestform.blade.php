@@ -1,120 +1,60 @@
 @extends('layouts.app')
 
 @section('content')
-    <style>
-        h1 {
-            text-align: center;
-        }
 
-        /* Hide all steps by default: */
-        .tab {
-            display: none;
-        }
-
-        button {
-            background-color: #4CAF50;
-            color: #ffffff;
-            border: none;
-            padding: 10px 20px;
-            font-size: 17px;
-            font-family: Raleway;
-            cursor: pointer;
-        }
-
-        button:hover {
-            opacity: 0.8;
-        }
-
-        #prevBtn {
-            background-color: #bbbbbb;
-        }
-
-        /* Make circles that indicate the steps of the form: */
-        .step {
-            height: 15px;
-            width: 15px;
-            margin: 0 2px;
-            background-color: #60D2C0;
-            border: none;
-            border-radius: 50%;
-            display: inline-block;
-            opacity: 1;
-        }
-
-        .step.active {
-            opacity: 1;
-        }
-
-        /* Mark the steps that are finished and valid: */
-        .step.finish {
-            background-color: #0D7377;
-        }
-    </style>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
                 <form id="regForm" action="">
+
                     <div class="tab h2 text-center">Was er geweld?
-                        <div class="col align-content-center">
-                            <div class="row align-content-center">
-                                <div class=""><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
-                                <div class=""><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
-                            </div>
+                        <div class="d-flex justify-content-center">
+                        <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
+                        <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
                         </div>
                     </div>
-                    <div class="tab h2 text-center">Ben je boos?
-                        <div class="col align-content-center">
-                            <div class="row align-content-center">
-                                <div class=""><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
-                                <div class=""><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
-                            </div>
+
+                    <div class="tab h2 text-center">Was er geweld?
+                        <div class="d-flex justify-content-center">
+                            <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
+                            <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
                         </div>
                     </div>
-                    <div class="tab h2 text-center">Ben je boos?
-                        <div class="col align-content-center">
-                            <div class="row align-content-center">
-                                <div class=""><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
-                                <div class=""><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
-                            </div>
+                    <div class="tab h2 text-center">Was er geweld?
+                        <div class="d-flex justify-content-center">
+                            <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
+                            <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
                         </div>
                     </div>
-                    <div class="tab h2 text-center">Ben je boos?
-                        <div class="col align-content-center">
-                            <div class="row align-content-center">
-                                <div class=""><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
-                                <div class=""><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
-                            </div>
+                    <div class="tab h2 text-center">Was er geweld?
+                        <div class="d-flex justify-content-center">
+                            <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
+                            <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
                         </div>
                     </div>
-                    <div class="tab h2 text-center">Ben je boos?
-                        <div class="col align-content-center">
-                            <div class="row align-content-center">
-                                <div class=""><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
-                                <div class=""><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
-                            </div>
+                    <div class="tab h2 text-center">Was er geweld?
+                        <div class="d-flex justify-content-center">
+                            <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
+                            <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
                         </div>
                     </div>
-                    <div class="tab h2 text-center">Ben je boos?
-                        <div class="col align-content-center">
-                            <div class="row align-content-center">
-                                <div class=""><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
-                                <div class=""><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
-                            </div>
+                    <div class="tab h2 text-center">Was er geweld?
+                        <div class="d-flex justify-content-center">
+                            <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
+                            <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
                         </div>
                     </div>
-                    <div class="tab h2 text-center">Ben je boos?
-                        <div class="col align-content-center">
-                            <div class="row align-content-center">
-                                <div class=""><button type="button" id="vraag-ja" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
-                                <div class=""><button type="button" id="vraag-nee" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
-                            </div>
+                    <div class="tab h2 text-center">Was er geweld?
+                        <div class="d-flex justify-content-center">
+                            <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
+                            <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
                         </div>
                     </div>
-                    <div style="overflow:auto;">
-                        <div style="float:right;">
-                            <button type="button" id="prevBtn" onclick="conclickprevhandler()">Previous</button>
-                            <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                    <div>
+                        <div class="d-flex justify-content-center">
+                            <button type="button" id="prevBtn" onclick="conclickprevhandler()">Vorige</button>
+                            <button type="button" id="nextBtn" onclick="nextPrev(1)">Volgende</button>
                         </div>
                     </div>
                     <!-- Circles which indicates the steps of the form: -->

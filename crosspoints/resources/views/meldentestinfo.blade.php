@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+<style>
+    p {
+        color: #0D7377;
+    }
+</style>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -22,7 +27,7 @@
                         </p>
                 </div>
                 <div class="card-body login-body">
-                    <a href="{{route('meldentest')}}"><button class="btn btn-primary">Start de meldentest</button></a>
+                    <a href="{{route('meldentestform')}}"><button class="btn btn-primary">Start de meldentest</button></a>
                 </div>
             </div>
         </div>

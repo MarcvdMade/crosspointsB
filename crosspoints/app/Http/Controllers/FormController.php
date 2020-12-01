@@ -29,6 +29,9 @@ class FormController extends Controller
     public function indexform(){
     return view('meldentestform');
 }
+    public function indexopen(){
+        return view('meldentestopen');
+    }
 
     public function checkscore(){
         $ongewenstgedrag = ['Pesten', 'Agressie', 'Discriminatie', 'Seksuele intimidate', 'Spanning op de werkvloek', 'Machtsmisbruik', 'Constante kritiek'];
