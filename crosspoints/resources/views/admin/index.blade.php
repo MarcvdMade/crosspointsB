@@ -10,11 +10,11 @@
         <div id="mySidenav" class="sidenav">
             <div class="sideNav-links">
             <a href="javascript:void(0)" id="close-btn" class="closebtn">&times;</a>
-            <a href="{{route('problem')}}">Voeg Ongewenst Gedrag Toe</a>
-            <a href="{{route('company')}}">Voeg Bedrijf toe</a>
-            <a href="{{route('counselors')}}">Overzicht Vertrouwenspersoon</a>
-            <a href="{{route('admins')}}">Overzicht Administrators</a>
-            <a href="">Bewerk Meldentest</a>
+            <a href="{{route('problem')}}" class="sidenav-text">Voeg Ongewenst Gedrag Toe</a>
+            <a href="{{route('company')}}" class="sidenav-text">Voeg Bedrijf toe</a>
+            <a href="{{route('counselors')}}" class="sidenav-text">Overzicht Vertrouwenspersoon</a>
+            <a href="{{route('admins')}}" class="sidenav-text">Overzicht Administrators</a>
+            <a href="" class="sidenav-text">Bewerk Meldentest</a>
             </div>
         </div>
         <div class="login-header card-header">
@@ -23,7 +23,7 @@
                 <p>Via het menu kunt u naar belangrijke gegevens komen. Hier krijgt u deze overzien, aanpassen en verwijderen.</p>
             </div>
             <div class="d-flex justify-content-center">
-                <button id="menu-button" class="info-meerlezen-btn">Open Menu</button>
+                <button id="menu-button" class="open-sidenav-btn">Open Menu</button>
             </div>
         </div>
     </div>

@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="{{asset("css/info.css")}}">
     <link rel="stylesheet" href="{{asset("css/melden.css")}}">
     <link rel="stylesheet" href="{{asset("css/admin.css")}}">
+    <link rel="stylesheet" href="{{asset("css/profile.css")}}">
 
     <!-- Styles -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
