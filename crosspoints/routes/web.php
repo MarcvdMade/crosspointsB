@@ -36,6 +36,7 @@ Route::get('profiel/{user:name}/wijzig', 'ProfilesController@edit')->name('edit-
 //melding
 Route::get('melding/meld', 'MeldController@index')->name('meld');
 Route::post('create-post', 'MeldController@createMeld')->name('meld.create');
+Route::get('melding/meldingen', 'Meldcontroller@getMeld')->name('meldingen');
 
 //vragenlijst
 Route::patch('vragenlijst', 'VraagController@updateVraag');
