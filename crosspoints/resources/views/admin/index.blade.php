@@ -14,7 +14,7 @@
             <a href="{{route('company')}}">Voeg Bedrijf toe</a>
             <a href="{{route('counselors')}}">Overzicht Vertrouwenspersoon</a>
             <a href="{{route('admins')}}">Overzicht Administrators</a>
-            <a href="">Bewerk Meldentest</a>
+            <a href="{{route('vragenlijst')}}">Bewerk Meldentest</a>
             </div>
         </div>
         <div class="login-header card-header">

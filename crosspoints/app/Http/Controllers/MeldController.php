@@ -17,6 +17,15 @@ class MeldController extends Controller
         return view('melding/meld');
     }
 
+    public function getMeld()
+    {
+        $melds = Meld::orderBy('id')->get();
+
+        return view('melding/meldingen', [
+            "melds" => $melds
+        ]);
+    }
+
     public function createMeld()
     {
 
