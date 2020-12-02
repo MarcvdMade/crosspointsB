@@ -1,0 +1,99 @@
+.diary-card {
+    background-color: #0D7377;
+    color: white;
+    padding: 12px 2px;
+    margin: 30px 0 10px 50px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 40%;
+    border-radius: 5px;
+}
+
+.diary-card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    background-color: #60D2C0;
+    cursor: pointer;
+}
+
+.test {
+    background-image: url("/css/images/book.jpeg");
+    height: 800px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.diary-header {
+    background-color: #0D7377!important;
+    color: white;
+    margin-bottom: 25px;
+}
+
+.overlay {
+    position: fixed;
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    cursor: pointer;
+}
+
+#text{
+    text-align: center;
+    position: absolute;
+    background-image: url("/css/images/paper.jpg");
+    top: 50%;
+    left: 50%;
+    color: black;
+    padding: 40px 100px;
+    background-color: white;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+}
+
+.overlay-head {
+    padding-bottom: 15px;
+    font-size: 30px;
+}
+
+.overlay-text {
+    padding: 10px 0;
+    font-size: 15px;
+}
+
+.limiter {
+    margin-top: 15px;
+    height: 740px!important;
+    overflow: auto;
+}
+
+.limiter::-webkit-scrollbar {
+
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 2px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #60D2C0;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #60D2C0;
+}
