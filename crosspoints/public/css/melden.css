@@ -29,7 +29,58 @@
     color: white!important;
     text-decoration: none;
 }
+#prevBtn{
+    background-color: #DDDDDD!important;
+    color: gray!important;
+    margin-top: 32px;
+    margin-left: 10vw;
+    border: none;
+    padding: 4px 10px;
+    border-radius: 6px;
+    transition: all 0.3s ease 0s;
+
+}
+#nextBtn{
+    background-color: #0D7377!important;
+    color: white!important;
+    margin-top: 32px;
+    margin-left: auto;
+    margin-right: 10vw;
+    border: none;
+    padding: 4px 10px;
+    border-radius: 6px;
+    transition: all 0.3s ease 0s;
+}
+.tab {
+    display: none;
+
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
 
 #ex1Slider .slider-selection {
     background: #BABABA;
+}
+/* Make circles that indicate the steps of the form: */
+.step {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #60D2C0;
+    border: none;
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 1;
+}
+
+.step.active {
+    opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+    background-color: #0D7377;
 }

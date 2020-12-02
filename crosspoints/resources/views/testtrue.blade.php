@@ -9,9 +9,10 @@
                 <div class="card-body login-body">
                     <h4 class="text-center">Ja, wij raden u aan om te melden.</h4>
                     <div class="row justify-content-center">
-                        <button class="melden-yesno-button"><a href="{{route('home')}}" class="melden-yesno-button-link">Melden</a></button>
                         <button class="melden-yesno-button"><a href="{{route('home')}}" class="melden-yesno-button-link"> Terug</a></button>
+                        <button class="melden-yesno-button"><a href="{{route('home')}}" class="melden-yesno-button-link">Melden</a></button>
                     </div>
+                    <p class="text-muted text-center">Als u besluit toch niet te melden kan dat via de "terug" knop hierboven.</p>
                 </div>
             </div>
         </div>

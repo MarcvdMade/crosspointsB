@@ -9,8 +9,6 @@
 
     <title>Team Crosspoints B</title>
 
-    <!-- Scripts -->
-
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -109,12 +107,10 @@
                     Home</a>
             </div>
 
-            <div class="layout-sitenav-block">
-                <a href="{{route('meldentest')}}" class="layout-sitenav-links"><img
-                        src="{{asset('css/images/reportlogo.png')}}" alt="Report logo representing the report page"
-                        class="layout-sitenav-pic">
-                    Test</a>
-            </div>
+                        <div class="layout-sitenav-block">
+                            <a href="{{route('meldentestinfo')}}" class="layout-sitenav-links"><img src="{{asset('css/images/reportlogo.png')}}" alt="Report logo representing the report page" class="layout-sitenav-pic">
+                            Test</a>
+                        </div>
 
             <div class="layout-sitenav-block">
                 <a href="{{route('meld')}}" class="layout-sitenav-links"><img
