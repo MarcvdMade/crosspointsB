@@ -22,6 +22,7 @@
                     <th scope="col">#</th>
                     <th scope="col">Naam</th>
                     <th scope="col">Email</th>
+                    <th scope="col">Bedrijven</th>
                     <th scope="col">Verwijder</th>
                 </tr>
                 </thead>
@@ -32,6 +33,11 @@
                             <td>{{$vp->id}}</td>
                             <td>{{$vp->name}}</td>
                             <td>{{$vp->email}}</td>
+                            <td>
+                            @foreach($vp->companies as $company)
+                            <p>{{$company->name}}</p>
+                            @endforeach
+                            </td>
                             <td>
                                 <form method="POST" action="{{route('delete-counselor', $vp['id'])}}">
                                     @csrf
