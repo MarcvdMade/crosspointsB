@@ -102,6 +102,7 @@ Route::middleware('can:is_admin')->group(function () {
 //counselor routes
 Route::middleware('can:is_counselor')->group(function () {
     Route::get('vertrouwenspersoon', 'CounselorController@index')->name('vertrouwenspersoon');
+    Route::get('counselor/gebruikers', 'UserOverview@index')->name('gebruikers');
 });
 
 

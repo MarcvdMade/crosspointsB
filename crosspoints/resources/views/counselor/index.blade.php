@@ -11,7 +11,7 @@
             <div class="sideNav-links">
                 <a href="javascript:void(0)" id="close-btn" class="closebtn">&times;</a>
                 <a href="{{route('meldingen')}}">Gemaakte meldingen</a>
-                <a href="">Gebruikers</a>
+                <a href="{{route('gebruikers')}}">Gebruikers</a>
                 <a href="">Gebruiker toevoegen</a>
             </div>
         </div>
