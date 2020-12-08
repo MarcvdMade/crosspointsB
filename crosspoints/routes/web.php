@@ -102,6 +102,8 @@ Route::middleware('can:is_admin')->group(function () {
 //counselor routes
 Route::middleware('can:is_counselor')->group(function () {
     Route::get('vertrouwenspersoon', 'CounselorController@index')->name('vertrouwenspersoon');
+    Route::get('vertrouwenspersoon/voeg-gebruiker-toe', 'AddUserController@index')->name('add-user');
+    Route::post('vertrouwenspersoon', 'AddUserController@store');
 });
 
 
