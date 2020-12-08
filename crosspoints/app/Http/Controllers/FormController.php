@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Middleware\Authenticate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class FormController extends Controller
 {
@@ -13,77 +14,15 @@ class FormController extends Controller
     {
         $this->middleware('auth');
     }
-    public function index(){
-        $user=Auth::user();
-        session()->forget('testscore');
-        session()->forget('question');
-        session()->forget('answers');
-        session()->put('testscore',0);
-        session()->put('question',0);
-        session()->put('answers', []);
-        return view('meldentest', ['user'=>$user]);
-    }
     public function indexinfo(){
         return view('meldentestinfo');
     }
     public function indexform(){
-    return view('meldentestform');
-}
-
-    public function checkscore(){
-        $ongewenstgedrag = ['Pesten', 'Agressie', 'Discriminatie', 'Seksuele intimidate', 'Spanning op de werkvloek', 'Machtsmisbruik', 'Constante kritiek'];
-        $answer = request('button');
-        $test = session()->get('testscore');
-        $question = session()->get('question');
-
-        if($question == 6){
-            if($test <4){
-                return view('testfalse');
-            }else{
-                return view('testtrue');
-            }
-        }
-        if($answer == 1) {
-            session()->put('lastbutton',1);
-
-            $testupdate = $test+1;
-            $questionupdate = $question+1;
-
-            session()->put('testscore',$testupdate);
-            session()->put('question',$questionupdate);
-            session()->push('answers', 1);
-
-            return view('/testform/meldentestQ'.$questionupdate, ['test'=>$testupdate, 'ongewenstgedrag'=>$ongewenstgedrag, 'question'=>$questionupdate]);
-        }else{
-            session()->put('lastbutton',0);
-
-            $questionupdate = $question+1;
-            session()->push('answers', 0);
-
-            session()->put('question',$questionupdate);
-            return view('/testform/meldentestQ'.$questionupdate, ['test'=>$test, 'ongewenstgedrag'=>$ongewenstgedrag, 'question'=>$questionupdate]);
-        }
+        $selected = request('select');
+        return view('meldentestform', ['selected'=>$selected]);
     }
-
-    public function goback(){
-        $test = session()->get('testscore');
-        $question = session()->get('question');
-        $answers = session()->get('answers');
-        if($question == 1){
-            return ($this->index());
-        }
-
-        $questionupdate = $question-1;
-        if (last($answers) == 1){
-            $test = $test-1;
-        }
-        array_pop($answers);
-
-        session()->put('question',$questionupdate);
-        session()->put('testscore',$test);
-        session()->put('answers', $answers);
-
-
-        return view('/testform/meldentestQ'.$questionupdate, ['test'=>$test], ['question'=>$questionupdate]);
+    public function indexselect(){
+        $questions = DB::table('questions')->get();
+        return view('meldentestselect', ['questions'=>$questions]);
     }
 }

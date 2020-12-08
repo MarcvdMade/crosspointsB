@@ -6,51 +6,283 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <form id="regForm" action="">
+                <form id="regForm" action="{{route('meldentestinfo')}}">
+                    @csrf
+                    @if(in_array('Pesten', $selected))
+                        <div class="tab h2 text-center">Bent u tijdens u arbeidsuren constant alert op voorvallen?
+                            <div class="d-flex justify-content-center">
+                                <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
+                                <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
+                            </div>
+                        </div>
 
-                    <div class="tab h2 text-center">Was er geweld?
-                        <div class="d-flex justify-content-center">
-                        <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
-                        <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
+                        <div class="tab h2 text-center">Piekert u na uw werktijden ook over wat er is gebeurd?
+                            <div class="d-flex justify-content-center">
+                                <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
+                                <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
+                            </div>
                         </div>
-                    </div>
+                        <div class="tab h2 text-center">Heeft u slaapproblemen?
+                            <div class="d-flex justify-content-center">
+                                <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
+                                <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
+                            </div>
+                        </div>
+                        <div class="tab h2 text-center">Heeft u concentratieproblemen?
+                            <div class="d-flex justify-content-center">
+                                <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
+                                <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
+                            </div>
+                        </div>
+                        <div class="tab h2 text-center">Heeft u last van extreme emoties?
+                            <div class="d-flex justify-content-center">
+                                <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
+                                <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
+                            </div>
+                        </div>
+                        <div class="tab h2 text-center">Heeft u vermijdend gedrag?
+                            <div class="d-flex justify-content-center">
+                                <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
+                                <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
+                            </div>
+                        </div>
+                    @endif()
 
-                    <div class="tab h2 text-center">Was er geweld?
-                        <div class="d-flex justify-content-center">
-                            <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
-                            <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
+                    @if(in_array('Agressie', $selected))
+                        <div class="tab h2 text-center">Bent u tijdens u arbeidsuren constant alert op voorvallen?
+                            <div class="d-flex justify-content-center">
+                                <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
+                                <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="tab h2 text-center">Was er geweld?
-                        <div class="d-flex justify-content-center">
-                            <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
-                            <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
+
+                        <div class="tab h2 text-center">Piekert u na uw werktijden ook over wat er is gebeurd?
+                            <div class="d-flex justify-content-center">
+                                <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
+                                <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="tab h2 text-center">Was er geweld?
-                        <div class="d-flex justify-content-center">
-                            <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
-                            <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
+                        <div class="tab h2 text-center">Heeft u slaapproblemen?
+                            <div class="d-flex justify-content-center">
+                                <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
+                                <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="tab h2 text-center">Was er geweld?
-                        <div class="d-flex justify-content-center">
-                            <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
-                            <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
+                        <div class="tab h2 text-center">Heeft u concentratieproblemen?
+                            <div class="d-flex justify-content-center">
+                                <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
+                                <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="tab h2 text-center">Was er geweld?
-                        <div class="d-flex justify-content-center">
-                            <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
-                            <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
+                        <div class="tab h2 text-center">Heeft u last van extreme emoties?
+                            <div class="d-flex justify-content-center">
+                                <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
+                                <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="tab h2 text-center">Was er geweld?
-                        <div class="d-flex justify-content-center">
-                            <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
-                            <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
+                        <div class="tab h2 text-center">Heeft u vermijdend gedrag?
+                            <div class="d-flex justify-content-center">
+                                <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
+                                <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
+                            </div>
                         </div>
-                    </div>
+                    @endif()
+                    @if(in_array('Disciminatie', $selected))
+                        <div class="tab h2 text-center">Bent u tijdens u arbeidsuren constant alert op voorvallen?
+                            <div class="d-flex justify-content-center">
+                                <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
+                                <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
+                            </div>
+                        </div>
+
+                        <div class="tab h2 text-center">Piekert u na uw werktijden ook over wat er is gebeurd?
+                            <div class="d-flex justify-content-center">
+                                <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
+                                <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
+                            </div>
+                        </div>
+                        <div class="tab h2 text-center">Heeft u slaapproblemen?
+                            <div class="d-flex justify-content-center">
+                                <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
+                                <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
+                            </div>
+                        </div>
+                        <div class="tab h2 text-center">Heeft u concentratieproblemen?
+                            <div class="d-flex justify-content-center">
+                                <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
+                                <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
+                            </div>
+                        </div>
+                        <div class="tab h2 text-center">Heeft u last van extreme emoties?
+                            <div class="d-flex justify-content-center">
+                                <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
+                                <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
+                            </div>
+                        </div>
+                        <div class="tab h2 text-center">Heeft u vermijdend gedrag?
+                            <div class="d-flex justify-content-center">
+                                <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
+                                <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
+                            </div>
+                        </div>
+                    @endif()
+                    @if(in_array('Seksuele intimidatie', $selected))
+                        <div class="tab h2 text-center">Bent u tijdens u arbeidsuren constant alert op voorvallen?
+                            <div class="d-flex justify-content-center">
+                                <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
+                                <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
+                            </div>
+                        </div>
+
+                        <div class="tab h2 text-center">Piekert u na uw werktijden ook over wat er is gebeurd?
+                            <div class="d-flex justify-content-center">
+                                <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
+                                <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
+                            </div>
+                        </div>
+                        <div class="tab h2 text-center">Heeft u slaapproblemen?
+                            <div class="d-flex justify-content-center">
+                                <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
+                                <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
+                            </div>
+                        </div>
+                        <div class="tab h2 text-center">Heeft u concentratieproblemen?
+                            <div class="d-flex justify-content-center">
+                                <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
+                                <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
+                            </div>
+                        </div>
+                        <div class="tab h2 text-center">Heeft u last van extreme emoties?
+                            <div class="d-flex justify-content-center">
+                                <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
+                                <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
+                            </div>
+                        </div>
+                        <div class="tab h2 text-center">Heeft u vermijdend gedrag?
+                            <div class="d-flex justify-content-center">
+                                <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
+                                <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
+                            </div>
+                        </div>
+                    @endif()
+                    @if(in_array('Spanning op de werkvloer', $selected))
+                        <div class="tab h2 text-center">Bent u tijdens u arbeidsuren constant alert op voorvallen?
+                            <div class="d-flex justify-content-center">
+                                <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
+                                <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
+                            </div>
+                        </div>
+
+                        <div class="tab h2 text-center">Piekert u na uw werktijden ook over wat er is gebeurd?
+                            <div class="d-flex justify-content-center">
+                                <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
+                                <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
+                            </div>
+                        </div>
+                        <div class="tab h2 text-center">Heeft u slaapproblemen?
+                            <div class="d-flex justify-content-center">
+                                <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
+                                <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
+                            </div>
+                        </div>
+                        <div class="tab h2 text-center">Heeft u concentratieproblemen?
+                            <div class="d-flex justify-content-center">
+                                <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
+                                <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
+                            </div>
+                        </div>
+                        <div class="tab h2 text-center">Heeft u last van extreme emoties?
+                            <div class="d-flex justify-content-center">
+                                <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
+                                <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
+                            </div>
+                        </div>
+                        <div class="tab h2 text-center">Heeft u vermijdend gedrag?
+                            <div class="d-flex justify-content-center">
+                                <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
+                                <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
+                            </div>
+                        </div>
+                    @endif()
+                    @if(in_array('Machtsmisbruik', $selected))
+                        <div class="tab h2 text-center">Bent u tijdens u arbeidsuren constant alert op voorvallen?
+                            <div class="d-flex justify-content-center">
+                                <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
+                                <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
+                            </div>
+                        </div>
+
+                        <div class="tab h2 text-center">Piekert u na uw werktijden ook over wat er is gebeurd?
+                            <div class="d-flex justify-content-center">
+                                <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
+                                <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
+                            </div>
+                        </div>
+                        <div class="tab h2 text-center">Heeft u slaapproblemen?
+                            <div class="d-flex justify-content-center">
+                                <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
+                                <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
+                            </div>
+                        </div>
+                        <div class="tab h2 text-center">Heeft u concentratieproblemen?
+                            <div class="d-flex justify-content-center">
+                                <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
+                                <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
+                            </div>
+                        </div>
+                        <div class="tab h2 text-center">Heeft u last van extreme emoties?
+                            <div class="d-flex justify-content-center">
+                                <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
+                                <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
+                            </div>
+                        </div>
+                        <div class="tab h2 text-center">Heeft u vermijdend gedrag?
+                            <div class="d-flex justify-content-center">
+                                <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
+                                <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
+                            </div>
+                        </div>
+                    @endif()
+                    @if(in_array('Constante kritiek', $selected))
+                        <div class="tab h2 text-center">Bent u tijdens u arbeidsuren constant alert op voorvallen?
+                            <div class="d-flex justify-content-center">
+                                <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
+                                <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
+                            </div>
+                        </div>
+
+                        <div class="tab h2 text-center">Piekert u na uw werktijden ook over wat er is gebeurd?
+                            <div class="d-flex justify-content-center">
+                                <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
+                                <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
+                            </div>
+                        </div>
+                        <div class="tab h2 text-center">Heeft u slaapproblemen?
+                            <div class="d-flex justify-content-center">
+                                <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
+                                <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
+                            </div>
+                        </div>
+                        <div class="tab h2 text-center">Heeft u concentratieproblemen?
+                            <div class="d-flex justify-content-center">
+                                <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
+                                <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
+                            </div>
+                        </div>
+                        <div class="tab h2 text-center">Heeft u last van extreme emoties?
+                            <div class="d-flex justify-content-center">
+                                <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
+                                <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
+                            </div>
+                        </div>
+                        <div class="tab h2 text-center">Heeft u vermijdend gedrag?
+                            <div class="d-flex justify-content-center">
+                                <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
+                                <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
+                            </div>
+                        </div>
+                    @endif()
+
                     <div>
                         <div class="d-flex justify-content-center">
                             <button type="button" id="prevBtn" onclick="conclickprevhandler()">Vorige</button>
@@ -59,13 +291,62 @@
                     </div>
                     <!-- Circles which indicates the steps of the form: -->
                     <div style="text-align:center;margin-top:40px;">
-                        <span class="step"></span>
-                        <span class="step"></span>
-                        <span class="step"></span>
-                        <span class="step"></span>
-                        <span class="step"></span>
-                        <span class="step"></span>
-                        <span class="step"></span>
+                        @if(in_array('Pesten', $selected))
+                            <span class="step"></span>
+                            <span class="step"></span>
+                            <span class="step"></span>
+                            <span class="step"></span>
+                            <span class="step"></span>
+                            <span class="step"></span>
+                        @endif
+                        @if(in_array('Agressie', $selected))
+                            <span class="step"></span>
+                            <span class="step"></span>
+                            <span class="step"></span>
+                            <span class="step"></span>
+                            <span class="step"></span>
+                            <span class="step"></span>
+                        @endif
+                        @if(in_array('Disciminatie', $selected))
+                            <span class="step"></span>
+                            <span class="step"></span>
+                            <span class="step"></span>
+                            <span class="step"></span>
+                            <span class="step"></span>
+                            <span class="step"></span>
+                        @endif
+                        @if(in_array('Seksuele intimidatie', $selected))
+                            <span class="step"></span>
+                            <span class="step"></span>
+                            <span class="step"></span>
+                            <span class="step"></span>
+                            <span class="step"></span>
+                            <span class="step"></span>
+                        @endif
+                        @if(in_array('Spanning op de werkvloer', $selected))
+                            <span class="step"></span>
+                            <span class="step"></span>
+                            <span class="step"></span>
+                            <span class="step"></span>
+                            <span class="step"></span>
+                            <span class="step"></span>
+                        @endif
+                        @if(in_array('Machtsmisbruik', $selected))
+                            <span class="step"></span>
+                            <span class="step"></span>
+                            <span class="step"></span>
+                            <span class="step"></span>
+                            <span class="step"></span>
+                            <span class="step"></span>
+                        @endif
+                        @if(in_array('Constante kritiek', $selected))
+                            <span class="step"></span>
+                            <span class="step"></span>
+                            <span class="step"></span>
+                            <span class="step"></span>
+                            <span class="step"></span>
+                            <span class="step"></span>
+                        @endif
                     </div>
                 </form>
                 <script>
@@ -83,17 +364,19 @@
                         } else {
                             document.getElementById("prevBtn").style.display = "inline";
                         }
+
                         if (n == (x.length - 1)) {
+                            console.log("Laatste vraag");
+                            document.getElementById("nextBtn").innerHTML = "Next step";
+                            document.getElementById("nextBtn").onclick = function () {
+                                location.href = "{{ route('meldentestinfo') }}";
+                            };
                             document.getElementById("vraag-ja").onclick = function (){
                                 redirectnext()
                             }
                             document.getElementById("vraag-nee").onclick = function (){
-                                location.href = "meldentestopen";
+                                redirectnextfalse()
                             }
-                            document.getElementById("nextBtn").innerHTML = "Next step";
-                            document.getElementById("nextBtn").onclick = function () {
-                                location.href = "{{ route('meldentestopen') }}";
-                            };
                         } else {
                             document.getElementById("nextBtn").innerHTML = "Next";
                         }
@@ -121,7 +404,6 @@
                     }
                     function addAwnser(x){
                         awnsers.push(x);
-                        console.log(awnsers);
                     }
                     function validateForm() {
                         // This function deals with validation of the form fields
@@ -159,13 +441,19 @@
                         nextPrev(1);
                     }
                     function conclickprevhandler(){
+                        var x = document.getElementsByClassName("step");
+                        document.getElementsByClassName("step")[currentTab -1].className = "step";
                         awnsers.pop();
                         nextPrev(-1);
                         console.log(awnsers);
                     }
                     function redirectnext(){
                         onclickbuttonhandler(1)
-                        location.href = "{{ route('meldentestopen') }}";
+                        location.href = "{{ route('meldentestinfo') }}";
+                    }
+                    function redirectnextfalse(){
+                        onclickbuttonhandler(2)
+                        location.href = "{{ route('meldentestinfo') }}";
                     }
 
                 </script>

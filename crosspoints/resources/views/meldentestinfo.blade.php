@@ -27,7 +27,7 @@
                         </p>
                 </div>
                 <div class="card-body login-body">
-                    <a href="{{route('meldentestform')}}"><button class="btn btn-primary">Start de meldentest</button></a>
+                    <a href="{{route('meldentestselect')}}"><button class="btn btn-primary">Start de meldentest</button></a>
                 </div>
             </div>
         </div>
