@@ -11,6 +11,7 @@
                         <thead>
                         <tr>
                             <th scope="col">id</th>
+                            <th scope="col">Werknemer</th>
                             <th scope="col">Situatie</th>
                             <th scope="col">Sinds</th>
                             <th scope="col">Ervaring</th>
@@ -22,8 +23,10 @@
                         </thead>
                         <tbody>
                         @foreach($melds as $meld)
+                            @if($meld->hidden_vp == 1)
                             <tr>
                                 <th scope="row">{{ $meld->id }}</th>
+                                <td>{{$meld->user->name}}</td>
                                 <td>{{ $meld->situation }}</td>
                                 <td>{{ $meld->since }}</td>
                                 <td>{{ $meld->experience }}</td>
@@ -32,6 +35,7 @@
                                 <td>{{ $meld->phone }}</td>
                                 <td>{{ $meld->created_at }}</td>
                             </tr>
+                            @endif
                         @endforeach
                         </tbody>
                     </table>
