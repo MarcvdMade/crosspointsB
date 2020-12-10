@@ -177,7 +177,7 @@
                     <a href="{{route("about")}}">Over ons</a>
                 </p>
                 <p>
-                    <a href="{{route("meldentest")}}">Meldentest</a>
+                    <a href="{{route("meldentestinfo")}}">Meldentest</a>
                 </p>
                 <p>
                     <a href="{{route("meld")}}">Melden</a>
