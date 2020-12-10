@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Company;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
 
 class AddUserController extends Controller
@@ -25,10 +26,23 @@ class AddUserController extends Controller
 
         request()->validate([
             'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')],
+            'name' => ['required'],
+            'password' => 'required',
             'company' => ['required']
         ]);
 
-        dd(\request()->all());
+        $user = new User();
+
+        $user->name = request('name');
+        $user->email = request('email');
+        $user->password = Hash::make(request('password'));
+
+        $user->save();
+        $user->assignCompany(\request('company'));
+
+
+        return redirect()->route('vertrouwenspersoon')
+            ->with('success', 'Er is een nieuwe werknemer toegevoegd');
 
     }
 }
