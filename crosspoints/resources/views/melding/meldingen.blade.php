@@ -18,6 +18,7 @@
                             <th scope="col">Vertrouwenspersoon</th>
                             <th scope="col">Contact</th>
                             <th scope="col">Phone</th>
+                            <th scope="col">Afgehandeld</th>
                             <th scope="col">Datum ingediend</th>
                         </tr>
                         </thead>
@@ -33,6 +34,7 @@
                                 <td>{{ $meld->counselor }}</td>
                                 <td>{{ $meld->contact }}</td>
                                 <td>{{ $meld->phone }}</td>
+                                <td>{{ $meld->hidden_vp }}</td>
                                 <td>{{ $meld->created_at }}</td>
                             </tr>
                             @endif

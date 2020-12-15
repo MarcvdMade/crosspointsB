@@ -45,4 +45,12 @@ class AddUserController extends Controller
             ->with('success', 'Er is een nieuwe werknemer toegevoegd');
 
     }
+
+    public function search()                                        //You can search in the kolom address
+    {
+        $search_text = $_GET['query'];
+        $users = User::where('name','LIKE', '%'.$search_text.'%')->get();
+
+        return view('counselor/search',compact('users'));
+    }
 }
