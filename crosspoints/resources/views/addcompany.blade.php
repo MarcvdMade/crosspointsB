@@ -26,4 +26,28 @@
         </div>
     </div>
 </div>
+    <div class="container mt-3">
+        <div class="card-body d-flex justify-content-center login-body">
+            <h2>Overzicht bedrijven</h2>
+        </div>
+        <div>
+            <table class="table table-hover table-dark">
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Bedrijf</th>
+                    <th scope="col">KvK nummer</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach($companies as $c)
+                    <tr>
+                        <td>{{$c->id}}</td>
+                        <td>{{$c->name}}</td>
+                        <td>{{$c->kvk}}</td>
+                @endforeach
+                </tbody>
+            </table>
+        </div>
+    </div>
 @endsection

@@ -21,16 +21,22 @@
 .show-admin-img {
     display: inline-block;
     width: 50px;
+    height: 50px;
 }
 
 .show-admin {
-    display: inline-block;
-    padding: 0 0 25px 25px;
+    font-size: .9em;
+    display: block;
+}
+
+.show-admin-right {
+    font-size: .9em;
+    display: block;
 }
 
 .admin-show-btn {
     display: block!important;
-    margin-top: 15px!important;
+    margin-top: 25px!important;
 }
 
 .open-sidenav-btn {
@@ -80,5 +86,29 @@
 .sidenav-text:hover {
     opacity: 1;
     background-color: #4dc0b5;
+}
+
+/****/
+
+@media only screen and (max-width: 850px) {
+    .show-admin-img {
+        margin: 0 0 20px 35px;
+        width: 40px;
+    }
+
+    .show-admin-img-right {
+        margin: 0 0 20px 35px;
+        width: 40px;
+    }
+
+    .vp-block {
+        margin: 0 30px;
+    }
+
+    .rights-btn-text {
+        font-size: 12px;
+    }
+
+
 }
 

@@ -80,6 +80,23 @@
                             </div>
 
                             <div class="form-group">
+                                <label for="hidden" class="d-flex justify-content-center info-link-label">Prive</label>
+                                <div class="col-12 d-flex justify-content-center info-link-label">
+                                     <select name="hidden">
+                                         <option value="0">Alleen zichtbaar voor mij</option>
+                                         <option value="1">Zichtbaar voor vertrouwenspersoon</option>
+                                     </select>
+                                    @error('hidden')
+                                    <p>{{$errors->first('hidden')}}</p>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div>
+                                <input type="hidden" name="completed" value="0">
+                            </div>
+
+                            <div class="form-group">
                                 <label for="conditions" class="d-flex justify-content-center info-link-label">Ik ga akkoord met de algemene voorwaarden</label>
                                 <div class="col-12 d-flex justify-content-center info-link-label">
                                 <input type="checkbox" name="conditions" style="width: 30px;height: 30px;" required>
