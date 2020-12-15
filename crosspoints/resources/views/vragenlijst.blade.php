@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-
+    <a href="{{route('admin')}}"><img src="{{asset('css/images/backicon.png')}}" class="back_icon"></a>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12">
