@@ -60,4 +60,12 @@ class MeldController extends Controller
         return redirect('/home')->with('success','Het formulier is verzonden, binnen 2 dagen wordt er contact opgenomen');
     }
 
+    public function search1()                                        //You can search in the kolom address
+    {
+        $search_text = $_GET['query'];
+        $melds = Meld::where('user','LIKE', '%'.$search_text.'%')->get();
+
+        return view('search',compact('melds'));
+    }
+
 }

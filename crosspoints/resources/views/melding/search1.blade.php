@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <a href="{{route('vertrouwenspersoon')}}"><img src="{{asset('css/images/backicon.png')}}" class="back_icon"></a>
+    <a href="{{route('meldingen')}}"><img src="{{asset('css/images/backicon.png')}}" class="back_icon"></a>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12">
@@ -29,18 +29,18 @@
                         <tbody>
                         @foreach($melds as $meld)
                             @if($meld->hidden_vp == 1)
-                            <tr>
-                                <th scope="row">{{ $meld->id }}</th>
-                                <td>{{$meld->user->name}}</td>
-                                <td>{{ $meld->situation }}</td>
-                                <td>{{ $meld->since }}</td>
-                                <td>{{ $meld->experience }}</td>
-                                <td>{{ $meld->counselor }}</td>
-                                <td>{{ $meld->contact }}</td>
-                                <td>{{ $meld->phone }}</td>
-                                <td>{{ $meld->hidden_vp }}</td>
-                                <td>{{ $meld->created_at }}</td>
-                            </tr>
+                                <tr>
+                                    <th scope="row">{{ $meld->id }}</th>
+                                    <td>{{$meld->user->name}}</td>
+                                    <td>{{ $meld->situation }}</td>
+                                    <td>{{ $meld->since }}</td>
+                                    <td>{{ $meld->experience }}</td>
+                                    <td>{{ $meld->counselor }}</td>
+                                    <td>{{ $meld->contact }}</td>
+                                    <td>{{ $meld->phone }}</td>
+                                    <td>{{ $meld->hidden_vp }}</td>
+                                    <td>{{ $meld->created_at }}</td>
+                                </tr>
                             @endif
                         @endforeach
                         </tbody>
