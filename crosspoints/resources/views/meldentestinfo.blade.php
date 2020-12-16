@@ -16,13 +16,12 @@
                     <h2 class="text-center">Anonimiteit</h2>
                         <p>
                             Tijdens uw test stellen wij uw anonimiteit als prioriteit nummer 1.
-                            Het is onmogelijk voor de eigenaren en andere gebruikers van de site om uw antwoorden te zien zonder dat u er toestemming voor geeft.
+                            Het is onmogelijk voor de eigenaren en andere gebruikers van de site om uw antwoorden te zien.
                             De test is volledig op uw eigen apparaat en uw antwoorden worden nergens opgeslagen.
                         </p>
                     <h2 class="text-center">Uw dagboek</h2>
                         <p>
-                            Als U uw resultaat wel wilt opslaan, geven wij de optie hiervoor aan het einde van de test. Dit wordt opgeslagen in uw persoonlijke dagboek
-                            waar uw vertrouwenspersoon niet bij kan zonder uw toestemming. Dit kunt u gebruiken in een eventueel gesprek met uw vertrouwenspersoon.
+                            Als U uw resultaat wel wilt opslaan, geven wij de optie hiervoor aan het einde van de test. Dit wordt opgeslagen in uw persoonlijke dagboek. Dit kunt u gebruiken in een eventueel gesprek met uw vertrouwenspersoon.
                             Wij raden u altijd aan om een melding te maken na de test als u deze wilt gebruiken in een gesprek om meer informatie te vergaren voor uw gesprek.
                         </p>
                 </div>
