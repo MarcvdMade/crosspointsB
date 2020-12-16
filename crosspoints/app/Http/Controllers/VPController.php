@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Company;
 use App\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
@@ -9,7 +10,12 @@ class VPController extends Controller
 {
     protected function index(User $user){
         $this->authorize('is_admin', $user);
-        return view('admin.makeVP');
+
+        $companies = Company::latest()->get();
+
+        return view('admin.makeVP', [
+            'companies' => $companies
+        ]);
     }
 
     protected function store(User $user)
@@ -20,6 +26,7 @@ class VPController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')],
             'password' => ['required', 'string', 'min:8', 'confirmed'] ,
+            'company' => ['required']
         ]);
 
         $user = new User();
@@ -30,6 +37,7 @@ class VPController extends Controller
 
         $user->save();
         $user->assignRole(2);
+        $user->assignCompany(request('company'));
 
 
         return redirect()->route('counselors')

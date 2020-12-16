@@ -17,6 +17,15 @@ class MeldController extends Controller
         return view('melding/meld');
     }
 
+    public function getMeld()
+    {
+        $melds = Meld::orderBy('id')->get();
+
+        return view('melding/meldingen', [
+            "melds" => $melds
+        ]);
+    }
+
     public function createMeld()
     {
 
@@ -28,6 +37,8 @@ class MeldController extends Controller
             'contact' => 'required',
             'phone' => 'required',
             'conditions' => 'required',
+            'hidden' => 'required',
+            'completed' => 'required',
             'user_id' => 'required'
         ]);
 
@@ -40,6 +51,8 @@ class MeldController extends Controller
         $meld->contact = request('contact');
         $meld->phone = request('phone');
         $meld->conditions = true;
+        $meld->hidden_vp = request('hidden');
+        $meld->completed = request('completed');
         $meld->user_id = request('user_id');
 
         $meld->save();

@@ -7,7 +7,7 @@
             <div class="col-md-8">
                 <div class="card">
                     <h3 class="d-flex justify-content-center login-header info-header">Vraag Toevoegen</h3>
-
+                    <a href="{{route('vragenlijst')}}"><button class="info-meerlezen-btn">Vragenlijst</button></a>
                     <div class="card-body login-body">
                         <form method="POST" action="{{route('vraag.create')}}">
                             @csrf
@@ -18,8 +18,9 @@
                                 <p>{{$errors->first('vraag')}}</p>
                                 @enderror
                             </div>
-
-                            <button type="submit" class="btn btn-success" >Opslaan</button>
+                            <div class="d-flex justify-content-center">
+                                <button type="submit" class="info-create-button">Opslaan</button>
+                            </div>
                         </form>
                     </div>
                 </div>

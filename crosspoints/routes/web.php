@@ -41,6 +41,7 @@ Route::get('profiel/{user:name}/wijzig', 'ProfilesController@edit')->name('edit-
 //melding
 Route::get('melding/meld', 'MeldController@index')->name('meld');
 Route::post('create-post', 'MeldController@createMeld')->name('meld.create');
+Route::get('melding/meldingen', 'Meldcontroller@getMeld')->name('meldingen');
 
 //vragenlijst
 Route::patch('vragenlijst', 'VraagController@updateVraag');
@@ -103,6 +104,9 @@ Route::middleware('can:is_admin')->group(function () {
 //counselor routes
 Route::middleware('can:is_counselor')->group(function () {
     Route::get('vertrouwenspersoon', 'CounselorController@index')->name('vertrouwenspersoon');
+    Route::get('counselor/gebruikers', 'UserOverview@index')->name('gebruikers');
+    Route::get('vertrouwenspersoon/voeg-gebruiker-toe', 'AddUserController@index')->name('add-user');
+    Route::post('vertrouwenspersoon', 'AddUserController@store');
 });
 
 

@@ -18,7 +18,11 @@ class CompanyController extends Controller
     public function index(User $user){
         $this->authorize('is_admin', $user);
 
-        return(view('addcompany'));
+        $companies = Company::all();
+
+        return(view('addcompany', [
+            "companies" => $companies
+        ]));
     }
 
     public function store(User $user){
@@ -30,6 +34,6 @@ class CompanyController extends Controller
         $company->kvk = request('kvk');
 
         $company->save();
-        return redirect("/admin");
+        return redirect("/company");
     }
 }

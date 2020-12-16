@@ -22,6 +22,8 @@ class CreateMeldsTable extends Migration
             $table->string('contact');
             $table->string('phone');
             $table->boolean('conditions');
+            $table->boolean('hidden_vp');
+            $table->boolean('completed');
             $table->unsignedBigInteger('user_id');
 
             $table->foreign('user_id')
