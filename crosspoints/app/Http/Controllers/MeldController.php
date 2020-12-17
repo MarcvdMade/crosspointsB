@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 use App\Meld;
 
@@ -63,9 +64,8 @@ class MeldController extends Controller
     public function search1()                                        //You can search in the kolom address
     {
         $search_text = $_GET['query'];
-        $melds = Meld::where('user','LIKE', '%'.$search_text.'%')->get();
-
-        return view('search',compact('melds'));
+        $melds = User::where('name','LIKE', '%'.$search_text.'%')->firstOrFail()->report;
+        return view('melding/search1',compact('melds'));
     }
 
 }
