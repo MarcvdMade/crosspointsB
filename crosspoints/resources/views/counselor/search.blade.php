@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <a href="{{route('vertrouwenspersoon')}}"><img src="{{asset('css/images/backicon.png')}}" class="back_icon"></a>
+    <a href="{{route('gebruikers')}}"><img src="{{asset('css/images/backicon.png')}}" class="back_icon"></a>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12">
@@ -28,7 +28,7 @@
                                 <td>{{ $user->email }}</td>
                                 <td>
                                     @foreach($user->companies as $company)
-                                    {{ $company->name }}
+                                        {{ $company->name }}
                                     @endforeach
                                 </td>
                             </tr>

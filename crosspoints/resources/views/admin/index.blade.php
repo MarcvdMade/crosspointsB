@@ -14,7 +14,7 @@
             <a href="{{route('company')}}" class="sidenav-text">Voeg Bedrijf toe</a>
             <a href="{{route('counselors')}}" class="sidenav-text">Overzicht Vertrouwenspersoon</a>
             <a href="{{route('admins')}}" class="sidenav-text">Overzicht Administrators</a>
-            <a href="" class="sidenav-text">Bewerk Meldentest</a>
+            <a href="{{route('vragenlijst')}}" class="sidenav-text">Bewerk Meldentest</a>
             </div>
         </div>
         <div class="login-header card-header">

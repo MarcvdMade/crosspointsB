@@ -16,4 +16,5 @@ class VragenlijstController extends Controller
     {
         return view('vragenlijst');
     }
+
 }

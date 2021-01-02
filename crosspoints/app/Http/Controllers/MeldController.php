@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 use App\Meld;
 
@@ -58,6 +59,26 @@ class MeldController extends Controller
         $meld->save();
 
         return redirect('/home')->with('success','Het formulier is verzonden, binnen 2 dagen wordt er contact opgenomen');
+    }
+
+    public function search1()                                        //You can search in the kolom address
+    {
+        $search_text = $_GET['query'];
+        $melds = User::where('name','LIKE', '%'.$search_text.'%')->firstOrFail()->report;
+        return view('melding/search1',compact('melds'));
+    }
+
+    public function changeStatus($id)                               //You can change the status with the button
+    {
+        $meld = Meld::find($id);
+        $meld->hidden_vp=!$meld->hidden_vp;                               //The status can't equal to the same status
+
+        if($meld->save()){
+            return redirect('melding/meldingen')->with('success', 'post changed success!');
+        }
+        else{
+            return redirect('melding/meldingen')->with('error', 'post changed succes!');
+        }
     }
 
 }

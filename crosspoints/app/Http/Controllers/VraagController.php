@@ -64,4 +64,5 @@ class VraagController extends Controller
 
         return redirect()->route('vragenlijst')->with('success', 'Je hebt succesvol de vraag aangepast');
     }
+
 }

@@ -126,13 +126,6 @@
                         class="layout-sitenav-pic">
                     Info</a>
             </div>
-
-            <div class="layout-sitenav-block">
-                <a href="#" class="layout-sitenav-links"><img src="{{asset('css/images/phonelogo.png')}}"
-                                                              alt="Phone logo representing the contact page"
-                                                              class="layout-sitenav-pic">
-                    Contact</a></button>
-            </div>
         </div>
     </div>
 </header>
