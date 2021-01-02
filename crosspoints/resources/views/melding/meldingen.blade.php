@@ -38,7 +38,6 @@
                                 <td>{{ $meld->counselor }}</td>
                                 <td>{{ $meld->contact }}</td>
                                 <td>{{ $meld->phone }}</td>
-{{--                                <td>{{ $meld->hidden_vp }}--}}
                                 <td>
                                     <form action="{{ route('meld.changeStatus', $meld->id)}}" method="post">
                                         {{csrf_field()}}
@@ -58,5 +57,4 @@
             </div>
         </div>
     </div>
-
 @endsection
