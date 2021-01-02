@@ -4,7 +4,7 @@
     <a href="{{route('vertrouwenspersoon')}}"><img src="{{asset('css/images/backicon.png')}}" class="back_icon"></a>
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-12">
+            <div class="col-md-13">
                 <div class="card">
                     <form class="form-inline my-2 my-lg-0 float-right" type="get" action="{{ route('search1') }}">
                         <input class="form-control mr-sm-2" name="query" type="search" placeholder="Search" />
@@ -22,7 +22,7 @@
                             <th scope="col">Vertrouwenspersoon</th>
                             <th scope="col">Contact</th>
                             <th scope="col">Phone</th>
-                            <th scope="col">Afgehandeld</th>
+                            <th scope="col">Status</th>
                             <th scope="col">Datum ingediend</th>
                         </tr>
                         </thead>
@@ -38,7 +38,16 @@
                                 <td>{{ $meld->counselor }}</td>
                                 <td>{{ $meld->contact }}</td>
                                 <td>{{ $meld->phone }}</td>
-                                <td>{{ $meld->hidden_vp }}</td>
+{{--                                <td>{{ $meld->hidden_vp }}--}}
+                                <td>
+                                    <form action="{{ route('meld.changeStatus', $meld->id)}}" method="post">
+                                        {{csrf_field()}}
+                                        @if($meld->hidden_vp==1)
+                                            <button class="btn btn-warning">Niet uitgevoerd</button>
+                                        @else
+                                            <button class="btn btn-secondary">Uitgevoerd</button>
+                                        @endif
+                                    </form></td>
                                 <td>{{ $meld->created_at }}</td>
                             </tr>
                             @endif

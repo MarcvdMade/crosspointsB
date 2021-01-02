@@ -68,4 +68,17 @@ class MeldController extends Controller
         return view('melding/search1',compact('melds'));
     }
 
+    public function changeStatus($id)                               //You can change the status with the button
+    {
+        $meld = Meld::find($id);
+        $meld->hidden_vp=!$meld->hidden_vp;                               //The status can't equal to the same status
+
+        if($meld->save()){
+            return redirect('melding/meldingen')->with('success', 'post changed success!');
+        }
+        else{
+            return redirect('melding/meldingen')->with('error', 'post changed succes!');
+        }
+    }
+
 }

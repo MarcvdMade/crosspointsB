@@ -41,6 +41,7 @@ Route::get('melding/meld', 'MeldController@index')->name('meld');
 Route::post('create-post', 'MeldController@createMeld')->name('meld.create');
 Route::get('melding/meldingen', 'Meldcontroller@getMeld')->name('meldingen');
 Route::get('melding/search1', 'MeldController@search1')->name('search1');
+Route::post('change-status/{id}', 'MeldController@changeStatus')->name('meld.changeStatus');
 
 //vragenlijst
 Route::patch('vragenlijst', 'VraagController@updateVraag');
