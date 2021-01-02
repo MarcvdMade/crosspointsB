@@ -1,6 +1,7 @@
 @extends("layouts.app")
 
 @section('content')
+    <a href="{{route('admin')}}"><img src="{{asset('css/images/backicon.png')}}" class="back_icon"></a>
     <div class="container">
         @if($message = Session::get('success'))
             <div class="alert alert-success mt-3 text-center">
