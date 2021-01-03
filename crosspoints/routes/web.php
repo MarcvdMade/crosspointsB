@@ -27,12 +27,9 @@ Route::get('/meldentestinfo','FormController@indexinfo')->name('meldentestinfo')
 Route::get('/meldentestform','FormController@indexform')->name('meldentestform');
 Route::post('/meldentestform','FormController@indexform')->name('meldentestform');
 Route::get('/meldentestopen','FormController@indexopen')->name('meldentestopen');
+Route::get('/meldentestanswer','FormController@indexanswer')->name('meldentestanswer');
+Route::post('/meldentestanswer','FormController@indexanswer')->name('meldentestanswer');
 Route::get('/meldentestselect','FormController@indexselect')->name('meldentestselect');
-Route::get('/testtrue')->name('testtrue');
-Route::get('/testfalse')->name('testfalse');
-Route::post('/vragenlijst','FormController@checkscore')->name('vragenlijst');
-Route::post('/goback','FormController@goback')->name('goback');
-
 //profile routes
 Route::patch('profiel/{user:name}', 'ProfilesController@update');
 Route::get('profiel/{user:name}', 'ProfilesController@show')->name('profile');

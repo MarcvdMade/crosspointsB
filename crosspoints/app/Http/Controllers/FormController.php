@@ -17,6 +17,17 @@ class FormController extends Controller
     public function indexinfo(){
         return view('meldentestinfo');
     }
+    public function indexanswer(){
+        $string = request('hiddeninput');
+        $array = explode(",", $string);
+        $values = array_count_values($array);
+
+        if($values[1] >= count($array) / 2){
+            return view('meldentestanswer', ['answer' => 'meld']);
+        } else{
+            return view('meldentestanswer', ['answer' => 'meld niet']);
+        }
+    }
     public function indexform(){
         $selected = request('select');
         return view('meldentestform', ['selected'=>$selected]);

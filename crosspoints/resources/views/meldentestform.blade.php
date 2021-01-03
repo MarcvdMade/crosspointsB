@@ -6,7 +6,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <form id="regForm" action="{{route('meldentestinfo')}}">
+                <form id="regForm" method="post" action="{{route('meldentestanswer')}}">
                     @csrf
                     @if(in_array('Pesten', $selected))
                         <div class="tab h2 text-center">Bent u tijdens u arbeidsuren constant alert op voorvallen?
@@ -42,8 +42,8 @@
                         </div>
                         <div class="tab h2 text-center">Heeft u vermijdend gedrag?
                             <div class="d-flex justify-content-center">
-                                <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
-                                <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
+                                <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button a">ja</button></div>
+                                <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button b">nee</button></div>
                             </div>
                         </div>
                     @endif()
@@ -82,8 +82,8 @@
                         </div>
                         <div class="tab h2 text-center">Heeft u vermijdend gedrag?
                             <div class="d-flex justify-content-center">
-                                <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
-                                <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
+                                <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button a">ja</button></div>
+                                <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button b">nee</button></div>
                             </div>
                         </div>
                     @endif()
@@ -121,8 +121,8 @@
                         </div>
                         <div class="tab h2 text-center">Heeft u vermijdend gedrag?
                             <div class="d-flex justify-content-center">
-                                <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
-                                <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
+                                <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button a">ja</button></div>
+                                <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button b">nee</button></div>
                             </div>
                         </div>
                     @endif()
@@ -160,8 +160,8 @@
                         </div>
                         <div class="tab h2 text-center">Heeft u vermijdend gedrag?
                             <div class="d-flex justify-content-center">
-                                <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
-                                <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
+                                <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja"  class="melden-yesno-button a">ja</button></div>
+                                <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button b">nee</button></div>
                             </div>
                         </div>
                     @endif()
@@ -199,8 +199,8 @@
                         </div>
                         <div class="tab h2 text-center">Heeft u vermijdend gedrag?
                             <div class="d-flex justify-content-center">
-                                <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
-                                <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
+                                <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" id="vraag-ja" class="melden-yesno-button a">ja</button></div>
+                                <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" id="vraag-nee" class="melden-yesno-button b">nee</button></div>
                             </div>
                         </div>
                     @endif()
@@ -238,8 +238,8 @@
                         </div>
                         <div class="tab h2 text-center">Heeft u vermijdend gedrag?
                             <div class="d-flex justify-content-center">
-                                <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
-                                <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
+                                <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button a">ja</button></div>
+                                <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button b">nee</button></div>
                             </div>
                         </div>
                     @endif()
@@ -277,19 +277,19 @@
                         </div>
                         <div class="tab h2 text-center">Heeft u vermijdend gedrag?
                             <div class="d-flex justify-content-center">
-                                <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" class="melden-yesno-button">ja</button></div>
-                                <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" class="melden-yesno-button">nee</button></div>
+                                <div><button type="button" onclick="onclickbuttonhandler(1)" name="vraag-ja" id="vraag-ja" class="melden-yesno-button">ja</button></div>
+                                <div><button type="button" onclick="onclickbuttonhandler(2)" name="vraag-nee" id="vraag-nee" class="melden-yesno-button">nee</button></div>
                             </div>
                         </div>
                     @endif()
-
+                    <input id="hiddeninput" name="hiddeninput" hidden value="">
                     <div>
                         <div class="d-flex justify-content-center">
                             <button type="button" id="prevBtn" onclick="conclickprevhandler()">Vorige</button>
                             <button type="button" id="nextBtn" onclick="nextPrev(1)">Volgende</button>
                         </div>
                     </div>
-                    <!-- Circles which indicates the steps of the form: -->
+
                     <div style="text-align:center;margin-top:40px;">
                         @if(in_array('Pesten', $selected))
                             <span class="step"></span>
@@ -366,21 +366,16 @@
                         }
 
                         if (n == (x.length - 1)) {
-                            console.log("Laatste vraag");
-                            document.getElementById("nextBtn").innerHTML = "Next step";
-                            document.getElementById("nextBtn").onclick = function () {
-                                location.href = "{{ route('meldentestinfo') }}";
-                            };
-                            document.getElementById("vraag-ja").onclick = function (){
+                            document.getElementById("nextBtn").hidden
+                            document.getElementsByName("vraag-ja")[n].onclick = function (){
                                 redirectnext()
                             }
-                            document.getElementById("vraag-nee").onclick = function (){
+                            document.getElementsByName("vraag-nee")[n].onclick = function (){
                                 redirectnextfalse()
                             }
                         } else {
                             document.getElementById("nextBtn").innerHTML = "Next";
                         }
-                        //... and run a function that will display the correct step indicator:
                         fixStepIndicator(n)
                     }
 
@@ -393,6 +388,8 @@
                         x[currentTab].style.display = "none";
                         // Increase or decrease the current tab by 1:
                         currentTab = currentTab + n;
+
+                        console.log(awnsers)
                         // if you have reached the end of the form...
                         if (currentTab >= x.length) {
                             // ... the form gets submitted:
@@ -445,15 +442,21 @@
                         document.getElementsByClassName("step")[currentTab -1].className = "step";
                         awnsers.pop();
                         nextPrev(-1);
-                        console.log(awnsers);
                     }
                     function redirectnext(){
+                        let hiddeninput = document.getElementById('hiddeninput');
                         onclickbuttonhandler(1)
-                        location.href = "{{ route('meldentestinfo') }}";
+                        hiddeninput.value = awnsers
+                        console.log(hiddeninput.value)
+                        console.log(awnsers)
+                        document.getElementById("regForm").submit();
                     }
                     function redirectnextfalse(){
                         onclickbuttonhandler(2)
-                        location.href = "{{ route('meldentestinfo') }}";
+                        let hiddeninput = document.getElementById('hiddeninput');
+                        hiddeninput.value = awnsers
+                        console.log(hiddeninput.value)
+                        document.getElementById("regForm").submit();
                     }
 
                 </script>

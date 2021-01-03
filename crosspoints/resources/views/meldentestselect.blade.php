@@ -6,7 +6,10 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
+                <div class="login-header">
                 <h2>Selecteer welke vormen van ongewenst gedrag u mee in aanraking bent gekomen.</h2>
+                </div>
+                <div class="login-body">
                 <p class="text-muted">U kunt meerdere vormen selecteren door de control knop (ctrl) ingedrukt te houden tijdens het selecteren</p>
                 <form method="post" action="{{route('meldentestform')}}">
                     @csrf
@@ -21,6 +24,7 @@
                     </select>
                     <button type="submit" class="melden-yesno-button w-100 ml-auto">Doorgaan</button>
                 </form>
+                </div>
 
             </div>
         </div>
