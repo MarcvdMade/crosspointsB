@@ -17,7 +17,7 @@
         </div>
         <div class="login-header card-header">
             <div class="text-center">
-                <h2>Welkom, vertrouwens persoon {{auth()->user()->name}}</h2>
+                <h2>Welkom, vertrouwenspersoon {{auth()->user()->name}}</h2>
                 <p>Via het menu kunt u naar de meldingen en werknemers.</p>
             </div>
             <div class="d-flex justify-content-center">

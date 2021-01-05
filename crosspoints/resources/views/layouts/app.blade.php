@@ -180,8 +180,14 @@
             <div class=" mx-auto mb-md-0 mb-4">
 
                 <!-- Onze emails -->
-                <h6 class="text-uppercase font-weight-bold">Contact</h6>
+                <h6 class="text-uppercase font-weight-bold">Developers</h6>
                 <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 80px;">
+                <p><i class=""></i>Marc van der Made</p>
+                <p><i class=""></i>Daniël Abdi</p>
+                <p><i class=""></i>Luuk 's Gravendijk</p>
+                <p><i class=""></i>Merve Önal</p>
+                <p><i class=""></i>Gijsje de Vries</p>
+                <p><i class=""></i>Thomas Bezemer</p>
                 <p><br></p>
 
             </div>

@@ -13,19 +13,21 @@
                             <div class="form-group">
                                 <label for="situation" class="d-flex justify-content-center info-link-label">Situatie:</label>
                                 <div class="col-12 d-flex justify-content-center info-link-label">
-                                    <textarea name="situation" class="form-control" rows="3" placeholder="Omschrijf de situatie zo duidelijk mogelijk"></textarea>
+                                    <textarea name="situation" class="form-control" rows="3" placeholder="Omschrijf de situatie zo duidelijk mogelijk">{{ old('situation') }}</textarea>
                                 </div>
                                 @error('situation')
-                                <p>{{$errors->first('situation')}}</p>
+                                <p class="alert alert-danger">{{$errors->first('situation')}}</p>
                                 @enderror
                             </div>
 
                             <div class="form-group">
                                 <label for="since" class="d-flex justify-content-center info-link-label">Sinds wanneer is deze situatie aan de gang?</label>
                                 <div class="col-12 d-flex justify-content-center info-link-label">
-                                <input type="text" name="since" class="form-control" />
+                                <input type="text" name="since" class="form-control" value="{{ old('since') }}" />
                                 @error('since')
-                                <p>{{$errors->first('since')}}</p>
+                                    <div>
+                                        <p class="alert alert-danger">{{$errors->first('since')}}</p>
+                                    </div>
                                 @enderror
                                 </div>
                             </div>
@@ -72,7 +74,7 @@
                             <div class="form-group">
                                 <label for="phone" class="d-flex justify-content-center info-link-label">Telefoon nummer:</label>
                                 <div class="col-12 d-flex justify-content-center info-link-label">
-                                <input type="text" name="phone" class="form-control" />
+                                <input type="text" name="phone" class="form-control" value="{{ old('phonep') }}"/>
                                 @error('phone')
                                 <p>{{$errors->first('phone')}}</p>
                                 @enderror
