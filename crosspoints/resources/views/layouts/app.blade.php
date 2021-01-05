@@ -182,12 +182,6 @@
                 <!-- Onze emails -->
                 <h6 class="text-uppercase font-weight-bold">Contact</h6>
                 <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 80px;">
-                <p><i class=""></i>Marc van der Made - 0996549@hr.nl</p>
-                <p><i class=""></i>Daniël Abdi - 0975963@hr.nl</p>
-                <p><i class=""></i>Luuk s'Gravendijk - 0966746@hr.nl</p>
-                <p><i class=""></i>Merve Önal - 0913615@hr.nl</p>
-                <p><i class=""></i>Gijsje de Vries - 0996929@hr.nl</p>
-                <p><i class=""></i>Thomas Bezemer - 0991914@hr.nl </p>
                 <p><br></p>
 
             </div>
